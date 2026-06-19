@@ -1,0 +1,69 @@
+﻿page_num,table_index,table_row_index,classification,col_count,col_count_flag,col_00,col_01,col_02,col_03,col_04,col_05,col_06,col_00_raw_repr,amount_format_note
+1,0,2,ACCEPTED,7,OK,25-685,DA,Installation of pipe stop,7-Jan-26,PACIFIC FLOW CONTROL LIMITED,"$ 155,000",Y,'25-685',spaced: $ space digit
+1,0,3,ACCEPTED,7,OK,25-304,DA,24-304 - Shuttling Services - NOIC,7-Jan-26,ETS TRUCK SHUTTLE LTD.,"$ 2 25,000",Y,'25-304',spaced: $ space digit
+1,0,4,ACCEPTED,7,OK,25-303,DA,Towing Sevices,8-Jan-26,DAVIDSON TRUK TOW LTD.,"$ 200,000",Y,'25-303',spaced: $ space digit
+1,0,5,ACCEPTED,7,OK,26-0115,RFQ,Pineridge Stairs Repair - Kanaka Creek,9-Jan-26,PARK SOLUTIONS INC,"$ 79,759",Y,'26-0115',spaced: $ space digit
+1,0,7,ACCEPTED,7,OK,25-768,DA,Property Inspections - Gilbert Road Project,9-Jan-26,CORNERSTONE ADJUSTERS INC.,"$ 1 20,000",Y,'25-768',spaced: $ space digit
+1,0,8,ACCEPTED,7,OK,24-233,RFP,LIWWTP Protection Relay Replacement Construction,13-Jan-26,ROSS MORRISON ELECTRICAL LTD.,"$ 2 ,553,869",Y,'24-233',spaced: $ space digit
+1,0,13,ACCEPTED,7,OK,25-175,RFP,Supply and Installation of Session Initiation Protocol Trunk Circuits,19-Jan-26,ZAYO CANADA INC.,"$ 1 58,937",Y,'25-175',spaced: $ space digit
+1,0,16,ACCEPTED,7,OK,25-743,DA,Temporary roof structure - Lions Gate WWTP,20-Jan-26,"ALUMASAFWAY, INC","$ 108,608",Y,'25-743',spaced: $ space digit
+1,0,17,ACCEPTED,7,OK,26-0132,DA,Gilbert Trunk Sewer - Emergency Repairs,22-Jan-26,TYAM EXCAVATION & SHORING LTD.,"$ 381,724",Y,'26-0132',spaced: $ space digit
+1,0,18,ACCEPTED,7,OK,25-184,ITT,IONA ISLAND WASTEWATER TREATMENT PLANT SCUM DIPPER PROGRAM LOGIC CONTROLLERS REPLACEMENT,22-Jan-26,J.A. ELECTRIC Inc.,"$ 3 09,660",Y,'25-184',spaced: $ space digit
+1,0,21,ACCEPTED,7,OK,25-740,DA,Recycling Information Services,26-Jan-26,Recycling Council of British Columbia,"$ 245,555",Y,'25-740',spaced: $ space digit
+1,0,22,ACCEPTED,7,OK,25-739,DA,Annual Service - Agilent Inductively Coupled Plasma Mass Spectrometer,27-Jan-26,AGILENT TECHNOLOGIES CANADA INC.,"$ 1 85,221",Y,'25-739',spaced: $ space digit
+1,0,23,ACCEPTED,7,OK,25-075,RFP,IONA ISLAND WASTEWATER TREATMENT PLANT MEDIUM SLUDGE GAS BLOWERS ON ESSENTIAL SERVICE BUS CONSTRUCTION,29-Jan-26,ROSS MORRISON ELECTRICAL LTD.,"$ 306,829",Y,'25-075',spaced: $ space digit
+1,0,26,ACCEPTED,7,OK,25-709,DA,"Service, Repairs of Water Pumps & Related Equipment",7-Feb-26,SMITH CAMERON PROCESS SOLUTIONS,"$ 1,700,000",Y,'25-709',spaced: $ space digit
+1,0,27,ACCEPTED,7,OK,25-228,ITT,Contingency Disposal of Metro Vancouver Disposals,11-Feb-26,SECURE WASTE INFRASTRUCTURE CORP.,"$ 775,690",Y,'25-228',spaced: $ space digit
+1,0,28,ACCEPTED,7,OK,25-228,ITT,Contingency Disposal Services for Metro Vancouver Residuals,11-Feb-26,WASTECH SERVICES INC.,"$ 2,413,720",Y,'25-228',spaced: $ space digit
+1,0,29,ACCEPTED,7,OK,24-473,RFP,Construction Services for SE Lagoon Infill for IIWWTP Projects,11-Feb-26,Milestone Environmental Contracting Inc.,"$ 4,393,842",Y,'24-473',spaced: $ space digit
+1,0,41,ACCEPTED,7,OK,26-0226,DA,Annacis Island Wastewater Treatment (AIWWTP) Plant Bar Screen No.1 Refurbishment,12-Feb-26,VEOLIA WATER TECHNOLOGIES & SOLUTIONS CANADA GP,"$ 527,000",Y,'26-0226',spaced: $ space digit
+2,0,1,ACCEPTED,7,OK,24-477,ITT,Annacis Island Wastewater Treatment Plant Influent Pump Station Roof Replacement- Phase 2,18-Feb-26,THORPE INDUSTRIES (BC) LTD.,"$ 530,579",Y,'24-477',spaced: $ space digit
+2,0,13,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,Benchmark Tech Recruitment Ltd.,"$ 250,000.00",Y,'25-154',spaced: $ space digit
+2,0,14,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,Randstad Interim Inc.,"$ 500,000.00",Y,'25-154',spaced: $ space digit
+2,0,15,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,TEEMA Solutions Group,"$ 250,000.00",Y,'25-154',spaced: $ space digit
+2,0,16,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,IT/IQ Tech Recruiters Inc.,"$ 250,000.00",Y,'25-154',spaced: $ space digit
+2,0,17,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,ODGERS BERNDTSON CANADA INC.,"$ 250,000.00",Y,'25-154',spaced: $ space digit
+2,0,18,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,PINTON FORREST & MADDEN GROUP INC,"$ 250,000.00",Y,'25-154',spaced: $ space digit
+2,0,19,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,BOYDEN CANADA (WEST) INC.,"$ 250,000.00",Y,'25-154',spaced: $ space digit
+2,0,20,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,DAVID APLIN AND ASSOCIATES INC.,"$ 250,000.00",Y,'25-154',spaced: $ space digit
+2,0,21,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,ELEVATE SEARCH GROUP Ltd.,"$ 500,000.00",Y,'25-154',spaced: $ space digit
+2,0,22,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,Horizon Recruitment Inc.,"$ 500,000.00",Y,'25-154',spaced: $ space digit
+2,0,23,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,MGR WORKFORCE,"$ 250,000.00",Y,'25-154',spaced: $ space digit
+2,0,24,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,TEEMA SOLUTIONS GROUP,"$ 250,000.00",Y,'25-154',spaced: $ space digit
+2,0,25,ACCEPTED,7,OK,25-154,RFP,Recruitment Services,19-Feb-26,SI Systems,"$ 250,000.00",Y,'25-154',spaced: $ space digit
+2,0,59,ACCEPTED,7,OK,24-258,RFP,Lulu Island Wastewater Treatment Plant Digester I/O Migration,23-Feb-26,STATUS ELECTRICAL CORP,"$ 742,281",Y,'24-258',spaced: $ space digit
+3,0,3,ACCEPTED,7,OK,25-433,RFP,Metro Vancouver Pacific National Exhibition Activation for 2026-2027,23-Feb-26,MRG LIVE LTD,"$ 426,974.29",Y,'25-433',spaced: $ space digit
+3,0,7,ACCEPTED,7,OK,26-0141,RFQ,PVCO Watermain Piping and Ductile Iron Appurtenances for NW Interceptor,25-Feb-26,ICONIX WATERWORKS LIMITED PARTNERSHIP,"$ 190,076",Y,'26-0141',spaced: $ space digit
+3,0,10,ACCEPTED,7,OK,26-0251,RFQ,LYNN HEADWATERS - Varley Trail B78 Walkway Replacement,25-Feb-26,PARK SOLUTIONS INC,"$ 189,665",Y,'26-0251',spaced: $ space digit
+3,0,13,ACCEPTED,7,OK,25-0764,DA,2026 Chemical Analytical Services for Municipal Wastewater and Solids,24-Feb-26,SGS AXYS ANALYTICAL SERVICES LTD.,"$ 500,000",Y,'25-0764',spaced: $ space digit
+3,0,14,ACCEPTED,7,OK,25-006,ITT,Westburnco Pump Station 2 - VFD Replacement Project,25-Feb-26,GIFFORD ELECTRIC LTD,"$ 343,153.00",Y,'25-006',spaced: $ space digit
+3,0,17,ACCEPTED,7,OK,26-0119,COOP,Supply and Delivery of Lubricants,26-Feb-26,PETRO CANADA LUBRICATIONS INC.,"$ 150,000",Y,'26-0119',spaced: $ space digit
+3,0,18,ACCEPTED,7,OK,26-0119,COOP,Supply and Delivery of Lubricants,26-Feb-26,PETRO CANADA LUBRICATIONS INC.,"$ 150,000",Y,'26-0119',spaced: $ space digit
+3,0,19,ACCEPTED,7,OK,25-344,DA,Supply and Delivery of Ferrous Chloride,26-Feb-26,KEMIRA WATER SOLUTIONS CANADA INC.,"$ 1,991,243",Y,'25-344',spaced: $ space digit
+3,0,20,ACCEPTED,7,OK,25-267,RFP,Design and Environmental Services for Deas Island Dock Replacement,26-Feb-26,KLOHN CRIPPEN BERGER LTD,"$ 217,129.00",Y,'25-267',spaced: $ space digit
+3,0,24,ACCEPTED,7,OK,25-745,DA,Archaeological Work Relating to Routine Maintenance and Capital Development Projects at təmtəmíxʷtən/Belcarra Regional Park,26-Feb-26,INLAILAWATASH LIMITED PARTNERSHIP,"$ 674,489.00",Y,'25-745',spaced: $ space digit
+3,0,25,ACCEPTED,7,OK,25-0717,DA,Toxicological Laboratory Services – Wastewater Analysis,2-Mar-26,BUREAU VERITAS CANADA (2019) INC.,"$ 300,000",Y,'25-0717',spaced: $ space digit
+3,0,26,ACCEPTED,7,OK,22-0167,RFP,Construction Management for Services and Construction (At- Risk). Malaspina Phase I - Early Works,2-Mar-26,KINETIC CONSTRUCTION LTD.,"$ 2 ,368,343",Y,'22-0167',spaced: $ space digit
+3,0,30,ACCEPTED,7,OK,24-0580,RFP,Supply and Install of Flow Meter Kiosks at Vancouver Sewerage Area and North Shore Sewerage Area,2-Mar-26,J.A. ELECTRIC,"$ 2 ,492,500",Y,'24-0580',spaced: $ space digit
+3,0,32,ACCEPTED,7,OK,25-0656,RFP,Provisions of Electronic Standards,2-Mar-26,NIMONIK INC,"$ 310,000",Y,'25-0656',spaced: $ space digit
+3,0,35,ACCEPTED,7,OK,25-0002,ITT,Construction of Annacis Main No.5 North - New Westminster Section - Early Works,3-Mar-26,BD HALL CONSTRUCTORS CORP,"$ 150,000",Y,'25-0002',spaced: $ space digit
+3,0,36,ACCEPTED,7,OK,24-0356,DA,Supply and Delivery of Material for The North Shore Wastewater Treatment Plant. - Hitachi Energy (Formerly ABB Power Grids Canada)- Dry Transformer 4.16 kV,2-Mar-26,HITACHI ENERGY CANADA INC.,"$ 5 ,125,660",Y,'24-0356',spaced: $ space digit
+3,0,37,ACCEPTED,7,OK,24-0340,DA,Supply and Delivery of Material for The North Shore Wastewater Treatment Plant. - Western Scale Co LTD. - Truck Scale,6-Mar-26,WESTERN SCALE CO. LIMITED,"$ 138,399",Y,'24-0340',spaced: $ space digit
+3,0,38,ACCEPTED,7,OK,24-0342,DA,Supply and Delivery of Material for The North Shore Wastewater Treatment Plant - Ecologia Tecnica S.A. - Lamella,6-Mar-26,ECOLOGIA TECNICA SA,"$ 1 ,545,000",Y,'24-0342',spaced: $ space digit
+3,0,39,ACCEPTED,7,OK,24-0346,DA,"Supply and Delivery of Material for The North Shore Wastewater Treatment Plant -Aqua-Aerobic Systems, Inc. - Tertiary D isk Filter Area 63",6-Mar-26,AQUA-AEROBIC SYSTEMS INC. (CDN$),"$ 5 ,931,919",Y,'24-0346',spaced: $ space digit
+4,0,1,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,WSP CANADA INC,"$ 2 ,000,000",Y,'25-0504',spaced: $ space digit
+4,0,19,ACCEPTED,7,OK,26-0255,DA,"Rental Equipment, Products, and Related Services",11-Mar-26,"UNITED RENTALS OF CANADA, INC","$ 500,000",Y,'26-0255',spaced: $ space digit
+4,0,20,ACCEPTED,7,OK,25-0676,DA,Cambie-Richmond Water Supply Tunnel Technical Review Board,11-Mar-26,Mehrdad Mehrain,"$ 94,930",Y,'25-0676',spaced: $ space digit
+4,0,21,ACCEPTED,7,OK,26-0261,DA,Supply and Delivery of After Market Light Duty Automotive Parts and Accessories,13-Mar-26,UAP INC (D.B.A. NAPA AUTO PARTS),"$ 400,000",Y,'26-0261',spaced: $ space digit
+4,0,22,ACCEPTED,7,OK,26-0264,DA,"Rental, Lease or Purchase of Uniforms, Mats, Mops, Towels and Other Related Products and Services",19-Mar-26,CINTAS CANADA LTD,"$ 100,000",Y,'26-0264',spaced: $ space digit
+4,0,23,ACCEPTED,7,OK,26-0263,DA,"Supply and Delivery of Maintenance, Repair and Operations (MRO) Supplies",19-Mar-26,ACKLANDS - GRAINGER INC,"$ 250,000",Y,'26-0263',spaced: $ space digit
+4,0,24,ACCEPTED,7,OK,25-0245,RFP,"Owner’s Engineer, Project Management, and Preliminary Design Services for Annacis Island Wastewater Treatment Plant (AIWWTP) Regional Biosolids Dryer (Phase A)",19-Mar-26,STANTEC CONSULTING LTD.,"$ 5 ,493,754",Y,'25-0245',spaced: $ space digit
+4,0,26,ACCEPTED,7,OK,25-0001,ITT,Construction of Annacis Main No. 5 South - Contract 4B - Early Award,23-Mar-26,DBA B&B Heavy Civil Construction Ltd.,"$ 100,000",,'25-0001',spaced: $ space digit
+4,0,27,ACCEPTED,7,OK,24-0352,DA,Supply and Delivery of Material for The North Shore Wastewater Treatment Plant. - VAW Systems Ltd. - Silencers,24-Mar-26,VAW Systems Ltd.,"$ 117,054",Y,'24-0352',spaced: $ space digit
+4,0,28,ACCEPTED,7,OK,25-0769,DA,Completion of Cleveland Dam and Seymour Falls Dam Earthquake Monitoring Instrumentation,28-Mar-26,NANOMETRICS INC.,"$ 138,971",Y,'25-0769',spaced: $ space digit
+4,0,29,ACCEPTED,7,OK,25-0672,RFP,Regional Parks Pay Parking Lot Management,30-Mar-26,CONCORD PARKING LTD,"$ 370,650",Y,'25-0672',spaced: $ space digit
+4,0,34,ACCEPTED,7,OK,25-0734,ITT,Barnston Island Rip Rap Project,30-Mar-26,VALLEYSIDE CONTRACTING SERVICES LTD.,"$ 110,000",Y,'25-0734',spaced: $ space digit
+4,0,37,ACCEPTED,7,OK,26-0272,DA,Colocation Services 2026-2029,30-Mar-26,Cologix Inc,"$ 331,091",Y,'26-0272',spaced: $ space digit
+4,0,38,ACCEPTED,7,OK,26-0282,DA,Supply of Dark Fibre Circuits,30-Mar-26,Zayo Canada Inc,"$ 295,511",Y,'26-0282',spaced: $ space digit
+4,0,39,ACCEPTED,7,OK,25-0651,RFP,Supply and Installation of Scour Protection for Hollyburn Interceptor Capilano River Crossing,31-Mar-26,KBL PROJECTS LTD,"$ 998,764",Y,'25-0651',spaced: $ space digit
+4,0,44,ACCEPTED,7,OK,26-0313,DA,AI Security Solution,31-Mar-26,CDW Canada Corporation,"$ 675,400",Y,'26-0313',spaced: $ space digit

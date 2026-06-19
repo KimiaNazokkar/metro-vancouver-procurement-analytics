@@ -1,0 +1,92 @@
+
+=================================================================
+  AUDIT SUMMARY — diag_2025_raw_dump.py
+  Run timestamp     : 2026-06-15 21:19:22
+  PDF               : awarded-bids-2025.pdf
+  Total pages       : 19
+  Extraction method : extract_tables() plural
+=================================================================
+
+  ROW COUNT BREAKDOWN
+  ---------------------------------------------
+  Total rows seen by pdfplumber  :    930
+  ├── ACCEPTED                   :    910
+  ├── SKIPPED_EMPTY              :      0
+  └── HEADER / structural        :     20
+  Total classified               :    930
+
+  ✓ MATH CLOSURE: classified == seen
+
+  COMPARISON TO PRODUCTION OUTPUT
+  ---------------------------------------------
+  Production row count (910)    :    910
+  Diagnostic accepted count     :    910
+  Delta                         :     +0
+
+  ✓ Accepted count matches production output exactly.
+
+  TABLE COVERAGE
+  ---------------------------------------------
+  Pages with at least one table  : 19
+  Pages with NO table detected   : 0
+
+  COLUMN INTEGRITY
+  ---------------------------------------------
+  Accepted rows with col_count != 7 : 0
+  ✓ All accepted rows have exactly 7 columns.
+
+  NON-STANDARD COMPETITION NUMBER FORMATS
+  (Inventory of formats the 2023 narrow regex would have dropped)
+  ---------------------------------------------
+  Total non-standard comp numbers : 6
+
+  Format type: decimal_subvariant
+    25-118.01
+    25-118.02
+    25-118.03
+    25-118.04
+    25-118.05
+
+  Format type: four_digit_suffix
+    25-0001
+
+  ✓ All 6 expected non-standard formats confirmed in accepted rows.
+
+
+  SUSPICIOUS COL_00 VALUES
+  ---------------------------------------------
+  Count : 0
+  ✓ No suspicious col_00 values found.
+
+  25-064 is_awarded CORRECTION CHECK
+  ---------------------------------------------
+  ✓  raw=''            PALMIERI BROS. PAVING LTD.
+  ✓  raw=''            GB Paving
+  ✓  raw='Yes'         B.A. BLACKTOP LTD
+  ✓  raw=''            KEYWEST ASPHALT LTD
+  ✓  raw=''            WINVAN PAVING A DIVISION OF MAINLAND CONSTRUCTION MATER
+
+  ✓ All 5 vendors found. Raw is_awarded values confirm need for production fix.
+
+  AMOUNT NORMALIZATION CHECK
+  ---------------------------------------------
+  C$ prefix rows in raw data     : 1
+  Spaced amount rows in raw data  : 87
+  ✓ C$ prefix present — production C$. → $ fix is load-bearing.
+  Sample:
+    comp='25-007'  raw_amount='C$. 6,056,886'
+  ✓ Spaced amounts present — space-removal pass is load-bearing.
+
+=================================================================
+  NEXT STEPS FOR REVIEWER
+  ---------------------------------------------
+  1. Confirm delta is zero (accepted == 910)
+  2. Confirm all 6 non-standard formats in nonstandard_comp_numbers.csv
+  3. Review suspicious_col00.csv — any non-zero count needs manual check
+  4. Check pages_no_table count
+  5. Check 25-064 correction — what are the raw is_awarded values?
+     Blank raw values confirm the production hardcode is essential.
+  6. Check amount normalization — were C$ amounts present in raw rows?
+=================================================================
+  END OF AUDIT SUMMARY
+=================================================================

@@ -1,0 +1,7 @@
+﻿page_num,table_index,table_row_index,classification,col_count,col_count_flag,col_00,col_01,col_02,col_03,col_04,col_05,col_06,col_00_raw_repr,nonstandard_format
+12,0,18,ACCEPTED,7,OK,25-0001,DA,Richmond Sewer Grease Flushing,15-Aug-25,MCRAE'S ENVIRONMENTAL SERVICES LTD.,"$ 95,000",Yes,'25-0001',four_digit_suffix
+14,0,30,ACCEPTED,7,OK,25-118.01,Co-Operative Procurement,Juniper Campus Core Switches with Five Year Support,1-Oct-25,CDW CANADA CORP.,"$ 245,625",Yes,'25-118.01',decimal_subvariant
+14,0,31,ACCEPTED,7,OK,25-118.02,Co-Operative Procurement,KnowBe4 Security Awareness Training Subscription for Three Years,1-Oct-25,CDW CANADA CORP.,"$ 158,576",Yes,'25-118.02',decimal_subvariant
+14,0,38,ACCEPTED,7,OK,25-118.03,Co-Operative Procurement,"24-118.03 Palo Alto Next Gen Firewalls, Support and Threat Protection",3-Oct-25,CDW CANADA CORP.,"$ 247,780",Yes,'25-118.03',decimal_subvariant
+17,0,21,ACCEPTED,7,OK,25-118.05,Co-Operative Procurement,GreyNoise for Cybersecurity,17-Nov-25,CDW CANADA CORP.,"$ 9 9,675",Yes,'25-118.05',decimal_subvariant
+17,0,25,ACCEPTED,7,OK,25-118.04,Co-Operative Procurement,Spine and Closet Switches with five (5) years support,17-Nov-25,CDW CANADA CORP.,"$ 483,979",Yes,'25-118.04',decimal_subvariant

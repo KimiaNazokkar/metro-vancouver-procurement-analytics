@@ -1,0 +1,113 @@
+
+=================================================================
+  AUDIT SUMMARY — diag_2026_raw_dump.py
+  Run timestamp     : 2026-06-16 12:28:15
+  PDF               : awarded-bids-2026.pdf
+  Total pages       : 4
+  Extraction method : extract_tables() plural
+=================================================================
+
+  ROW COUNT BREAKDOWN
+  ---------------------------------------------
+  Total rows seen by pdfplumber  :    191
+  ├── ACCEPTED                   :    185
+  ├── SKIPPED_EMPTY              :      1
+  └── HEADER / structural        :      5
+  Total classified               :    191
+
+  ✓ MATH CLOSURE: classified == seen
+
+  COMPARISON TO PRODUCTION OUTPUT
+  ---------------------------------------------
+  Production row count (185)    :    185
+  Diagnostic accepted count     :    185
+  Delta                         :     +0
+
+  ✓ Accepted count matches production exactly.
+    Note: production also runs dropna(how='all') which may remove rows.
+    dropna candidates in accepted rows: 0
+
+  TABLE COVERAGE
+  ---------------------------------------------
+  Pages with at least one table  : 4
+  Pages with NO table detected   : 0
+
+  COLUMN INTEGRITY
+  ---------------------------------------------
+  Accepted rows with col_count != 7 : 0
+  ✓ All accepted rows have exactly 7 columns.
+
+  Y/N NORMALIZATION EVIDENCE
+  ---------------------------------------------
+  Raw Y/N rows in accepted set   : 184
+    'N'    : 112 rows
+    'Y'    : 72 rows
+
+  ✓ Y/N values present in raw data — normalization is LOAD-BEARING.
+    Without .replace({'Y':'Yes','N':'No'}), all is_awarded values
+    would remain as Y/N and break all downstream Yes/No filters.
+
+  25-0001 MANUAL CORRECTION VERIFICATION
+  ---------------------------------------------
+  Target: comp='25-0001'
+          vendor='DBA B&B Heavy Civil Construction Ltd.'
+
+  ✓ Row found in accepted set
+    raw is_awarded (col_06) : ''
+    raw amount (col_05)     : '$ 100,000'
+
+  ✓ Raw is_awarded is blank — manual correction is LOAD-BEARING.
+
+  ✓ Amount is non-null ('$ 100,000') — correction condition will fire.
+
+  AMOUNT FORMAT ANALYSIS (raw values before normalization)
+  ---------------------------------------------
+  Reversed amounts (digit before $) : 0
+  Spaced amounts ($ space digit)    : 68
+
+  ✓ Spaced amounts present in raw data.
+    Production's str.replace(' ', '') converts '$ 225,000' → '$225,000'.
+    The space-removal pass is LOAD-BEARING.
+  Sample:
+    comp='25-685'  raw='$ 155,000'
+    comp='25-304'  raw='$ 2 25,000'
+    comp='25-303'  raw='$ 200,000'
+
+  DROPNA CANDIDATE ANALYSIS
+  ---------------------------------------------
+  All-null accepted rows (dropna candidates) : 0
+  ✓ No all-null rows found in accepted set.
+    Production's dropna(how='all') removes zero data rows.
+
+  NON-STANDARD COMPETITION NUMBER FORMATS
+  (2026 has 40% four-digit format — structural PDF change)
+  ---------------------------------------------
+  Total non-standard accepted rows: 74
+
+    four_digit_XX-XXXX             74 rows
+
+  ✓ All 32 expected four-digit formats confirmed.
+  RAW DATE RANGE
+  ---------------------------------------------
+  11-Feb-26 to 9-Mar-26
+  Note: 2026 is a PARTIAL YEAR dataset.
+  All downstream analytics involving annual totals must account for this.
+
+  SUSPICIOUS COL_00 VALUES
+  ---------------------------------------------
+  Count : 0
+  ✓ No suspicious col_00 values found.
+
+=================================================================
+  NEXT STEPS FOR REVIEWER
+  ---------------------------------------------
+  1. Confirm delta (accepted vs 185)
+     If delta > 0: check if delta == dropna candidates exactly
+  2. Confirm Y/N raw values present — normalization is load-bearing
+  3. Check 25-0001 correction: is raw is_awarded blank or 'Y'?
+  4. Check spaced/reversed amounts — is space-removal pass needed?
+  5. All 32 expected four-digit formats in nonstandard_comps.csv
+  6. 2026 data covers Feb–Mar 2026 only — flag in annual comparisons
+=================================================================
+  END OF AUDIT SUMMARY
+=================================================================

@@ -1,0 +1,70 @@
+
+=================================================================
+  AUDIT SUMMARY — diag_2023_raw_dump.py
+  Run timestamp    : 2026-06-15 16:42:51
+  PDF              : awarded-bids-2023.pdf
+  Total pages      : 12
+=================================================================
+
+  ROW COUNT BREAKDOWN
+  ---------------------------------------------
+  Total rows seen by pdfplumber :    529
+  ├── ACCEPTED (regex match)    :    516
+  ├── REJECTED_REGEX            :      0
+  ├── SKIPPED_EMPTY             :      1
+  └── HEADER / structural       :     12
+  Total classified              :    529
+
+  ✓ MATH CLOSURE: classified count == rows seen  (audit is complete)
+
+  KEY METRICS
+  ---------------------------------------------
+  Rejection rate (rejected / accepted+rejected): 0.0%
+  Pages with no table detected    : 0
+  Pages with at least 1 rejection : 0
+  Accepted rows with col mismatch : 0
+
+  No rejected rows found. Regex may be capturing everything visible.
+
+  COMPARISON POINT FOR REVIEWER
+  ---------------------------------------------
+  step1_extracted_2023.csv row count   : 516  (known production output)
+  diag_2023_accepted row count         : 516
+  Delta (accepted - production)        : +0
+  ✓ Accepted count matches production output exactly
+
+  OUTPUT FILES
+  ---------------------------------------------
+  diag_2023_accepted.csv                        516 rows
+  diag_2023_rejected_regex.csv                  0 rows
+  diag_2023_skipped_empty.csv                   1 rows
+  diag_2023_header_rows.csv                     12 rows
+  diag_2023_audit_summary.txt                   (this summary)
+
+  NEXT STEPS FOR REVIEWER
+  ---------------------------------------------
+  1. Open diag_2023_rejected_regex.csv
+     → Look at col_00 values. Any that look like comp numbers?
+     → Look at col_00_raw_repr. Any hidden whitespace causing false rejects?
+
+  2. Open diag_2023_skipped_empty.csv
+     → Are empty rows clustered on the same pages?
+     → Do adjacent accepted rows have truncated descriptions?
+       (evidence of wrapped-line split problem)
+
+  3. Check pages_no_table list above
+     → Open those page numbers in the PDF directly
+     → Do they contain real data rows?
+
+  4. Check accepted rows with col_count_flag == MISMATCH
+     → A row with 6 or 8 cells may have field misalignment
+     → These are the rows most likely to have corrupt vendor/date values
+
+  5. Compare accepted row count to production (516)
+     → If equal: production and this diagnostic agree on what was seen
+     → If different: the two scripts are iterating the PDF differently
+       (most likely cause: extract_table vs extract_tables)
+
+=================================================================
+  END OF AUDIT SUMMARY
+=================================================================

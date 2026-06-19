@@ -1,0 +1,15 @@
+﻿page_num,table_index,rows_in_table,accepted,skipped_empty,header_rows,col_count_mismatches,suspicious_col00,col_shift_candidates,table_found
+1,0,37,35,0,2,0,0,13,YES
+2,0,40,39,0,1,0,0,29,YES
+3,0,40,39,0,1,0,0,22,YES
+4,0,40,39,0,1,0,0,21,YES
+5,0,40,39,0,1,0,0,24,YES
+6,0,40,39,0,1,0,0,19,YES
+7,0,40,39,0,1,0,0,20,YES
+8,0,40,39,0,1,0,0,18,YES
+9,0,40,39,0,1,0,0,25,YES
+10,0,39,38,0,1,0,0,19,YES
+11,0,40,39,0,1,0,0,27,YES
+12,0,40,39,0,1,0,0,27,YES
+13,0,40,39,0,1,0,0,14,YES
+14,0,26,25,0,1,0,0,16,YES

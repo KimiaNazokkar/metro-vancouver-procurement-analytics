@@ -1,0 +1,75 @@
+﻿page_num,table_index,table_row_index,classification,col_count,col_count_flag,col_00,col_01,col_02,col_03,col_04,col_05,col_06,col_00_raw_repr,comp_format
+1,0,5,ACCEPTED,7,OK,26-0115,RFQ,Pineridge Stairs Repair - Kanaka Creek,9-Jan-26,PARK SOLUTIONS INC,"$ 79,759",Y,'26-0115',four_digit_XX-XXXX
+1,0,6,ACCEPTED,7,OK,26-0115,RFQ,Pineridge Stairs Repair - Kanaka Creek,9-Jan-26,COQUITLAM RIDGE CONSTRUCTORS LTD,,N,'26-0115',four_digit_XX-XXXX
+1,0,17,ACCEPTED,7,OK,26-0132,DA,Gilbert Trunk Sewer - Emergency Repairs,22-Jan-26,TYAM EXCAVATION & SHORING LTD.,"$ 381,724",Y,'26-0132',four_digit_XX-XXXX
+1,0,41,ACCEPTED,7,OK,26-0226,DA,Annacis Island Wastewater Treatment (AIWWTP) Plant Bar Screen No.1 Refurbishment,12-Feb-26,VEOLIA WATER TECHNOLOGIES & SOLUTIONS CANADA GP,"$ 527,000",Y,'26-0226',four_digit_XX-XXXX
+3,0,7,ACCEPTED,7,OK,26-0141,RFQ,PVCO Watermain Piping and Ductile Iron Appurtenances for NW Interceptor,25-Feb-26,ICONIX WATERWORKS LIMITED PARTNERSHIP,"$ 190,076",Y,'26-0141',four_digit_XX-XXXX
+3,0,8,ACCEPTED,7,OK,26-0141,RFQ,PVCO Watermain Piping and Ductile Iron Appurtenances for NW Interceptor,25-Feb-26,EMCO Waterworks,,N,'26-0141',four_digit_XX-XXXX
+3,0,9,ACCEPTED,7,OK,26-0141,RFQ,PVCO Watermain Piping and Ductile Iron Appurtenances for NW Interceptor,25-Feb-26,FLOCOR,,N,'26-0141',four_digit_XX-XXXX
+3,0,10,ACCEPTED,7,OK,26-0251,RFQ,LYNN HEADWATERS - Varley Trail B78 Walkway Replacement,25-Feb-26,PARK SOLUTIONS INC,"$ 189,665",Y,'26-0251',four_digit_XX-XXXX
+3,0,11,ACCEPTED,7,OK,26-0251,RFQ,LYNN HEADWATERS - Varley Trail B78 Walkway Replacement,25-Feb-26,PLATINUM STONE CONTRACTING,,N,'26-0251',four_digit_XX-XXXX
+3,0,12,ACCEPTED,7,OK,26-0251,RFQ,LYNN HEADWATERS - Varley Trail B78 Walkway Replacement,25-Feb-26,SKYLARK MANAGEMENT CORP,,N,'26-0251',four_digit_XX-XXXX
+3,0,13,ACCEPTED,7,OK,25-0764,DA,2026 Chemical Analytical Services for Municipal Wastewater and Solids,24-Feb-26,SGS AXYS ANALYTICAL SERVICES LTD.,"$ 500,000",Y,'25-0764',four_digit_XX-XXXX
+3,0,17,ACCEPTED,7,OK,26-0119,COOP,Supply and Delivery of Lubricants,26-Feb-26,PETRO CANADA LUBRICATIONS INC.,"$ 150,000",Y,'26-0119',four_digit_XX-XXXX
+3,0,18,ACCEPTED,7,OK,26-0119,COOP,Supply and Delivery of Lubricants,26-Feb-26,PETRO CANADA LUBRICATIONS INC.,"$ 150,000",Y,'26-0119',four_digit_XX-XXXX
+3,0,25,ACCEPTED,7,OK,25-0717,DA,Toxicological Laboratory Services – Wastewater Analysis,2-Mar-26,BUREAU VERITAS CANADA (2019) INC.,"$ 300,000",Y,'25-0717',four_digit_XX-XXXX
+3,0,26,ACCEPTED,7,OK,22-0167,RFP,Construction Management for Services and Construction (At- Risk). Malaspina Phase I - Early Works,2-Mar-26,KINETIC CONSTRUCTION LTD.,"$ 2 ,368,343",Y,'22-0167',four_digit_XX-XXXX
+3,0,27,ACCEPTED,7,OK,22-0167,RFP,Construction Management for Services and Construction (At- Risk). Malaspina Phase I - Early Works,2-Mar-26,HEATHERBRAE CONSTRUCTION CO. LTD.,,N,'22-0167',four_digit_XX-XXXX
+3,0,28,ACCEPTED,7,OK,22-0167,RFP,Construction Management for Services and Construction (At- Risk). Malaspina Phase I - Early Works,2-Mar-26,PEAK CONSTRUCTION SERVICES LTD.,,N,'22-0167',four_digit_XX-XXXX
+3,0,29,ACCEPTED,7,OK,22-0167,RFP,Construction Management for Services and Construction (At- Risk). Malaspina Phase I - Early Works,2-Mar-26,VENTANA CONSTRUCTION,,N,'22-0167',four_digit_XX-XXXX
+3,0,30,ACCEPTED,7,OK,24-0580,RFP,Supply and Install of Flow Meter Kiosks at Vancouver Sewerage Area and North Shore Sewerage Area,2-Mar-26,J.A. ELECTRIC,"$ 2 ,492,500",Y,'24-0580',four_digit_XX-XXXX
+3,0,31,ACCEPTED,7,OK,24-0580,RFP,Supply and Install of Flow Meter Kiosks at Vancouver Sewerage Area and North Shore Sewerage Area,2-Mar-26,GIFFORD ELECTRIC LTD,,N,'24-0580',four_digit_XX-XXXX
+3,0,32,ACCEPTED,7,OK,25-0656,RFP,Provisions of Electronic Standards,2-Mar-26,NIMONIK INC,"$ 310,000",Y,'25-0656',four_digit_XX-XXXX
+3,0,33,ACCEPTED,7,OK,25-0656,RFP,Provisions of Electronic Standards,2-Mar-26,ALLIUM US HOLDING LLC,,N,'25-0656',four_digit_XX-XXXX
+3,0,34,ACCEPTED,7,OK,25-0656,RFP,Provisions of Electronic Standards,2-Mar-26,Intertek Inform,,N,'25-0656',four_digit_XX-XXXX
+3,0,35,ACCEPTED,7,OK,25-0002,ITT,Construction of Annacis Main No.5 North - New Westminster Section - Early Works,3-Mar-26,BD HALL CONSTRUCTORS CORP,"$ 150,000",Y,'25-0002',four_digit_XX-XXXX
+3,0,36,ACCEPTED,7,OK,24-0356,DA,Supply and Delivery of Material for The North Shore Wastewater Treatment Plant. - Hitachi Energy (Formerly ABB Power Grids Canada)- Dry Transformer 4.16 kV,2-Mar-26,HITACHI ENERGY CANADA INC.,"$ 5 ,125,660",Y,'24-0356',four_digit_XX-XXXX
+3,0,37,ACCEPTED,7,OK,24-0340,DA,Supply and Delivery of Material for The North Shore Wastewater Treatment Plant. - Western Scale Co LTD. - Truck Scale,6-Mar-26,WESTERN SCALE CO. LIMITED,"$ 138,399",Y,'24-0340',four_digit_XX-XXXX
+3,0,38,ACCEPTED,7,OK,24-0342,DA,Supply and Delivery of Material for The North Shore Wastewater Treatment Plant - Ecologia Tecnica S.A. - Lamella,6-Mar-26,ECOLOGIA TECNICA SA,"$ 1 ,545,000",Y,'24-0342',four_digit_XX-XXXX
+3,0,39,ACCEPTED,7,OK,24-0346,DA,"Supply and Delivery of Material for The North Shore Wastewater Treatment Plant -Aqua-Aerobic Systems, Inc. - Tertiary D isk Filter Area 63",6-Mar-26,AQUA-AEROBIC SYSTEMS INC. (CDN$),"$ 5 ,931,919",Y,'24-0346',four_digit_XX-XXXX
+3,0,40,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,GEI CONSULTANTS INC.,,Y,'25-0504',four_digit_XX-XXXX
+3,0,41,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,AECOM CANADA ULC,,Y,'25-0504',four_digit_XX-XXXX
+4,0,1,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,WSP CANADA INC,"$ 2 ,000,000",Y,'25-0504',four_digit_XX-XXXX
+4,0,2,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,GHD LIMITED,,Y,'25-0504',four_digit_XX-XXXX
+4,0,3,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,ASSOCIATED ENGINEERING (B.C.) LIMITED,,Y,'25-0504',four_digit_XX-XXXX
+4,0,4,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,ACUREN GROUP INC.,,Y,'25-0504',four_digit_XX-XXXX
+4,0,5,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,1129456 BC LTD,,N,'25-0504',four_digit_XX-XXXX
+4,0,6,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,12489171 Canada Inc,,N,'25-0504',four_digit_XX-XXXX
+4,0,7,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,ARCADIS PROFESSIONAL SERVICES (CANADA) INC.,,N,'25-0504',four_digit_XX-XXXX
+4,0,8,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,EHAN ENGINEERING LTD.,,N,'25-0504',four_digit_XX-XXXX
+4,0,9,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,GAMECHANGERS Inc,,N,'25-0504',four_digit_XX-XXXX
+4,0,10,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,HATCH CORPORATION,,N,'25-0504',four_digit_XX-XXXX
+4,0,11,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,Integricorr Company Limited,,N,'25-0504',four_digit_XX-XXXX
+4,0,12,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,NORDA STELO INC,,N,'25-0504',four_digit_XX-XXXX
+4,0,13,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,PURE TECHNOLOGIES LTD,,N,'25-0504',four_digit_XX-XXXX
+4,0,14,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,SLBC INC,,N,'25-0504',four_digit_XX-XXXX
+4,0,15,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,SPARTAN CONTROLS LTD,,N,'25-0504',four_digit_XX-XXXX
+4,0,16,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,Systemex Industrial,,N,'25-0504',four_digit_XX-XXXX
+4,0,17,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,VEOLIA NORTH AMERICA,,N,'25-0504',four_digit_XX-XXXX
+4,0,18,ACCEPTED,7,OK,25-0504,RFSQR,Consulting Services for Asset Management Program,9-Mar-26,Zpro Solutions Canada Inc,,N,'25-0504',four_digit_XX-XXXX
+4,0,19,ACCEPTED,7,OK,26-0255,DA,"Rental Equipment, Products, and Related Services",11-Mar-26,"UNITED RENTALS OF CANADA, INC","$ 500,000",Y,'26-0255',four_digit_XX-XXXX
+4,0,20,ACCEPTED,7,OK,25-0676,DA,Cambie-Richmond Water Supply Tunnel Technical Review Board,11-Mar-26,Mehrdad Mehrain,"$ 94,930",Y,'25-0676',four_digit_XX-XXXX
+4,0,21,ACCEPTED,7,OK,26-0261,DA,Supply and Delivery of After Market Light Duty Automotive Parts and Accessories,13-Mar-26,UAP INC (D.B.A. NAPA AUTO PARTS),"$ 400,000",Y,'26-0261',four_digit_XX-XXXX
+4,0,22,ACCEPTED,7,OK,26-0264,DA,"Rental, Lease or Purchase of Uniforms, Mats, Mops, Towels and Other Related Products and Services",19-Mar-26,CINTAS CANADA LTD,"$ 100,000",Y,'26-0264',four_digit_XX-XXXX
+4,0,23,ACCEPTED,7,OK,26-0263,DA,"Supply and Delivery of Maintenance, Repair and Operations (MRO) Supplies",19-Mar-26,ACKLANDS - GRAINGER INC,"$ 250,000",Y,'26-0263',four_digit_XX-XXXX
+4,0,24,ACCEPTED,7,OK,25-0245,RFP,"Owner’s Engineer, Project Management, and Preliminary Design Services for Annacis Island Wastewater Treatment Plant (AIWWTP) Regional Biosolids Dryer (Phase A)",19-Mar-26,STANTEC CONSULTING LTD.,"$ 5 ,493,754",Y,'25-0245',four_digit_XX-XXXX
+4,0,25,ACCEPTED,7,OK,25-0245,RFP,"Owner’s Engineer, Project Management, and Preliminary Design Services for Annacis Island Wastewater Treatment Plant (AIWWTP) Regional Biosolids Dryer (Phase A)",19-Mar-26,BROWN AND CALDWELL CONSULTANTS CANADA,,N,'25-0245',four_digit_XX-XXXX
+4,0,26,ACCEPTED,7,OK,25-0001,ITT,Construction of Annacis Main No. 5 South - Contract 4B - Early Award,23-Mar-26,DBA B&B Heavy Civil Construction Ltd.,"$ 100,000",,'25-0001',four_digit_XX-XXXX
+4,0,27,ACCEPTED,7,OK,24-0352,DA,Supply and Delivery of Material for The North Shore Wastewater Treatment Plant. - VAW Systems Ltd. - Silencers,24-Mar-26,VAW Systems Ltd.,"$ 117,054",Y,'24-0352',four_digit_XX-XXXX
+4,0,28,ACCEPTED,7,OK,25-0769,DA,Completion of Cleveland Dam and Seymour Falls Dam Earthquake Monitoring Instrumentation,28-Mar-26,NANOMETRICS INC.,"$ 138,971",Y,'25-0769',four_digit_XX-XXXX
+4,0,29,ACCEPTED,7,OK,25-0672,RFP,Regional Parks Pay Parking Lot Management,30-Mar-26,CONCORD PARKING LTD,"$ 370,650",Y,'25-0672',four_digit_XX-XXXX
+4,0,30,ACCEPTED,7,OK,25-0672,RFP,Regional Parks Pay Parking Lot Management,30-Mar-26,GARDA CANADA SECURITY CORPORATION,,N,'25-0672',four_digit_XX-XXXX
+4,0,31,ACCEPTED,7,OK,25-0672,RFP,Regional Parks Pay Parking Lot Management,30-Mar-26,IMPERIAL PARKING LIMITED,,N,'25-0672',four_digit_XX-XXXX
+4,0,32,ACCEPTED,7,OK,25-0672,RFP,Regional Parks Pay Parking Lot Management,30-Mar-26,INDIGO PARC CANADA / INDIGO PARK CANADA INC.,,N,'25-0672',four_digit_XX-XXXX
+4,0,33,ACCEPTED,7,OK,25-0672,RFP,Regional Parks Pay Parking Lot Management,30-Mar-26,EASY PARK,,N,'25-0672',four_digit_XX-XXXX
+4,0,34,ACCEPTED,7,OK,25-0734,ITT,Barnston Island Rip Rap Project,30-Mar-26,VALLEYSIDE CONTRACTING SERVICES LTD.,"$ 110,000",Y,'25-0734',four_digit_XX-XXXX
+4,0,35,ACCEPTED,7,OK,25-0734,ITT,Barnston Island Rip Rap Project,30-Mar-26,ROBERDS EXCAVATING (1991) LTD.,,N,'25-0734',four_digit_XX-XXXX
+4,0,36,ACCEPTED,7,OK,25-0734,ITT,Barnston Island Rip Rap Project,30-Mar-26,PLATINUM STONE CONTRACTING,,N,'25-0734',four_digit_XX-XXXX
+4,0,37,ACCEPTED,7,OK,26-0272,DA,Colocation Services 2026-2029,30-Mar-26,Cologix Inc,"$ 331,091",Y,'26-0272',four_digit_XX-XXXX
+4,0,38,ACCEPTED,7,OK,26-0282,DA,Supply of Dark Fibre Circuits,30-Mar-26,Zayo Canada Inc,"$ 295,511",Y,'26-0282',four_digit_XX-XXXX
+4,0,39,ACCEPTED,7,OK,25-0651,RFP,Supply and Installation of Scour Protection for Hollyburn Interceptor Capilano River Crossing,31-Mar-26,KBL PROJECTS LTD,"$ 998,764",Y,'25-0651',four_digit_XX-XXXX
+4,0,40,ACCEPTED,7,OK,25-0651,RFP,Supply and Installation of Scour Protection for Hollyburn Interceptor Capilano River Crossing,31-Mar-26,JACOB BROS. CONSTRUCTION INC.,,N,'25-0651',four_digit_XX-XXXX
+4,0,41,ACCEPTED,7,OK,25-0651,RFP,Supply and Installation of Scour Protection for Hollyburn Interceptor Capilano River Crossing,31-Mar-26,NORLAND LIMITED,,N,'25-0651',four_digit_XX-XXXX
+4,0,42,ACCEPTED,7,OK,25-0651,RFP,Supply and Installation of Scour Protection for Hollyburn Interceptor Capilano River Crossing,31-Mar-26,NORTH CONSTRUCTION LTD,,N,'25-0651',four_digit_XX-XXXX
+4,0,43,ACCEPTED,7,OK,25-0651,RFP,Supply and Installation of Scour Protection for Hollyburn Interceptor Capilano River Crossing,31-Mar-26,RUSH CONTRACTORS GROUP,,N,'25-0651',four_digit_XX-XXXX
+4,0,44,ACCEPTED,7,OK,26-0313,DA,AI Security Solution,31-Mar-26,CDW Canada Corporation,"$ 675,400",Y,'26-0313',four_digit_XX-XXXX

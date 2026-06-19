@@ -1,0 +1,127 @@
+
+=================================================================
+  AUDIT SUMMARY — diag_2024_raw_dump.py
+  Run timestamp     : 2026-06-15 18:12:09
+  PDF               : awarded-bids-2024.pdf
+  Total pages       : 14
+  Extraction method : extract_tables() plural
+=================================================================
+
+  ROW COUNT BREAKDOWN
+  ---------------------------------------------
+  Total rows seen by pdfplumber  :    542
+  ├── ACCEPTED                   :    527
+  ├── SKIPPED_EMPTY              :      0
+  └── HEADER / structural        :     15
+  Total classified               :    542
+
+  ✓ MATH CLOSURE: classified == seen  (audit accounting is complete)
+
+  COMPARISON TO PRODUCTION OUTPUT
+  ---------------------------------------------
+  Production row count (527)    :    527
+  Diagnostic accepted count     :    527
+  Delta                         :     +0
+
+  ✓ Accepted count matches production output exactly.
+    The diagnostic and production extractor agree on which rows to keep.
+
+  TABLE COVERAGE
+  ---------------------------------------------
+  Pages with at least one table : 14
+  Pages with NO table detected  : 0
+
+  COLUMN INTEGRITY
+  ---------------------------------------------
+  Accepted rows with col_count != 7 : 0
+
+  SUSPICIOUS COL_00 VALUES (accepted rows, non-competition-number content)
+  ---------------------------------------------
+  Count : 0
+  ✓ No suspicious col_00 values found.
+
+  VENDOR-TAIL-IN-AMOUNT COLUMN SHIFT CANDIDATES
+  ---------------------------------------------
+  Total candidates found        : 294
+  Known corrected competitions  : ['24-085', '24-132']
+  NEW (potentially unhandled)   : 293
+  Note: This diagnostic uses a deliberately broad detection mask.
+  Non-awarded rows with null/NaN amounts may appear in this count.
+  Review rows containing actual vendor-name text in the amount column
+  before treating a candidate as a true column-shift issue.
+
+  *** UNHANDLED COLUMN SHIFTS DETECTED — REVIEW REQUIRED ***
+    comp='23-342'  vendor='Skylark Management Corp.'  amount='NA'  awarded='No'  page=1
+    comp='23-342'  vendor='Park Solutions Inc.'  amount='NA'  awarded='No'  page=1
+    comp='23-085'  vendor='Seismic 2000 Construction Ltd.'  amount='NA'  awarded='No'  page=1
+    comp='23-004'  vendor='Jacob Bros. Construction Inc.'  amount='NA'  awarded='No'  page=1
+    comp='23-004'  vendor='Sandpiper Contracting LLP'  amount='NA'  awarded='No'  page=1
+    comp='23-287'  vendor='GHD Ltd.'  amount='NA'  awarded='No'  page=1
+    comp='23-287'  vendor='Sperling Hansen Associates'  amount='NA'  awarded='No'  page=1
+    comp='23-289'  vendor='Flocor Inc.'  amount='NA'  awarded='No'  page=1
+    comp='23-289'  vendor='EMCO Water Works'  amount='NA'  awarded='No'  page=1
+    comp='23-289'  vendor='Andrew Sheret Ltd.'  amount='NA'  awarded='No'  page=1
+    ... and 283 more — see diag_2024_col_shift_candidates.csv
+
+  ENCODING ARTIFACTS
+  ---------------------------------------------
+  Rows with encoding artifacts  : 72
+
+  *** NON-ASCII CHARACTERS DETECTED — REVIEW SAMPLE VALUES ***
+  Note: This check flags all non-ASCII Unicode characters.
+  Legitimate PDF typography (en dashes, smart quotes, non-breaking
+  hyphens, etc.) may appear in this count and does not indicate
+  an extraction error.
+    comp='23-004'  desc=field=competition_description, pattern='[^\\x00-\\x7F\\xC0-\\xFF]', value='Suppl
+    comp='23-004'  desc=field=competition_description, pattern='[^\\x00-\\x7F\\xC0-\\xFF]', value='Suppl
+    comp='23-004'  desc=field=competition_description, pattern='[^\\x00-\\x7F\\xC0-\\xFF]', value='Suppl
+    comp='23-289'  desc=field=competition_description, pattern='[^\\x00-\\x7F\\xC0-\\xFF]', value='Suppl
+    comp='23-289'  desc=field=competition_description, pattern='[^\\x00-\\x7F\\xC0-\\xFF]', value='Suppl
+    comp='23-289'  desc=field=competition_description, pattern='[^\\x00-\\x7F\\xC0-\\xFF]', value='Suppl
+    comp='23-289'  desc=field=competition_description, pattern='[^\\x00-\\x7F\\xC0-\\xFF]', value='Suppl
+    comp='23-372'  desc=field=vendor_name, pattern='[^\\x00-\\x7F\\xC0-\\xFF]', value='Sacre‐Davey Engin
+    comp='23-300'  desc=field=competition_description, pattern='[^\\x00-\\x7F\\xC0-\\xFF]', value='Coqui
+    comp='23-300'  desc=field=competition_description, pattern='[^\\x00-\\x7F\\xC0-\\xFF]', value='Coqui
+    ... and 62 more — see diag_2024_encoding_artifacts.csv
+
+  NEXT STEPS FOR REVIEWER
+  ---------------------------------------------
+  1. Check delta between accepted and production (527)
+     → If zero: extractor and diagnostic agree — proceed to manual spot-checks
+     → If non-zero: investigate which rows differ and why
+
+  2. Open diag_2024_suspicious_col00.csv
+     → Any rows where col_00 contains text that is not a competition number
+     → These rows passed through the permissive filter but may be garbage
+
+  3. Open diag_2024_col_shift_candidates.csv
+     → Filter to rows where col_00 NOT IN ('24-085', '24-132')
+     → Any remaining rows are potentially unhandled column shifts
+     → Cross-reference against the source PDF to confirm
+
+  4. Check pages with no table detected
+     → Open those pages in the PDF directly
+     → Do they contain visible data rows?
+
+  5. Open diag_2024_per_page_table_stats.csv
+     → Pages with 2+ tables: confirm both tables contain real data
+     → Unusually high skipped_empty counts may indicate wrapped descriptions
+
+  6. Manual spot-check: confirm 24-006A and 24-006B appear in accepted output
+     → These non-standard formats must be present to confirm permissive
+       filter correctly captures letter-suffix competition numbers
+
+=================================================================
+  OUTPUT FILES
+  ---------------------------------------------
+  diag_2024_accepted.csv
+  diag_2024_skipped_empty.csv
+  diag_2024_header_rows.csv
+  diag_2024_suspicious_col00.csv
+  diag_2024_col_shift_candidates.csv
+  diag_2024_encoding_artifacts.csv
+  diag_2024_per_page_table_stats.csv
+  diag_2024_audit_summary.txt
+=================================================================
+  END OF AUDIT SUMMARY
+=================================================================
