@@ -141,12 +141,12 @@ def main():
 
 
     # --------------------------------------------------
-    # AUDIT 1 — overall collapse
+    # DIAGNOSTIC 1 — overall key collapse
     # --------------------------------------------------
     before = df["vendor_name"].nunique()
     after  = df["vendor_name_key"].nunique()
 
-    print("  KEY BUILDER AUDIT")
+    print("  KEY BUILD DIAGNOSTIC")
     print("  " + "-" * 40)
     print(f"  Unique raw names : {before:,}")
     print(f"  Unique keys      : {after:,}")
@@ -155,7 +155,7 @@ def main():
 
 
     # --------------------------------------------------
-    # AUDIT 2 — normalization test suite (BLOCKING)
+    # TEST SUITE — normalization (blocking)
     #
     # This suite must pass before the lookup seed is written.
     # Any regression in build_key() will corrupt downstream
@@ -211,7 +211,7 @@ def main():
 
 
     # --------------------------------------------------
-    # AUDIT 3 — merged groups summary
+    # DIAGNOSTIC 2 — merged groups summary
     # --------------------------------------------------
     grouped = (
         df.groupby("vendor_name_key")["vendor_name"]
@@ -283,7 +283,7 @@ def main():
     lookup_seed_export.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
 
     print("=" * 60)
-    print("  KEY BUILD COMPLETE")
+    print("  STEP 5B KEY BUILD COMPLETE")
     print("=" * 60)
     print(f"  Total rows  : {len(df):,}")
     print(f"  Saved to    : {OUTPUT_PATH}")

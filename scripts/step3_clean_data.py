@@ -381,7 +381,7 @@ def main():
     df.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
 
     print("=" * 60)
-    print("  CLEAN COMPLETE")
+    print("  STEP 3 CLEAN COMPLETE")
     print("=" * 60)
     print(f"  Total rows  : {len(df):,}")
     print(f"  Saved to    : {OUTPUT_PATH}")
@@ -390,8 +390,13 @@ def main():
     for scope, count in df["amount_scope"].value_counts().items():
         print(f"    {scope:<40} {count:>5,}")
     print()
-    print(f"  KPI-eligible spend baseline : ${kpi_spend:,.2f}")
-    print(f"  KPI-eligible row count      : {kpi_count:,}")
+    print(
+        f"  KPI-eligible spend baseline : ${kpi_spend:,.2f} "
+        "(pre-Step 5H suppression; see step5h for final)"
+    )
+    print(f"  KPI-eligible row count      : {kpi_count:,} "
+          "(pre-Step 5H suppression; see step5h for final)"
+    )
     print()
     print("  Next step: step4_normalize_competition_types.py")
     print("=" * 60)
@@ -399,3 +404,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    

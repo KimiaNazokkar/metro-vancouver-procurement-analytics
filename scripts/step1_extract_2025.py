@@ -76,7 +76,7 @@ def main():
             for table in tables:
                 rows.extend(table)
 
-    clean_rows = []
+    filtered_rows = []
 
     for row in rows:
         if not row:
@@ -88,12 +88,15 @@ def main():
         if str(row[0]).startswith("The following contracts"):
             continue
 
-        clean_rows.append(row)
+        filtered_rows.append(row)
 
-    df = pd.DataFrame(clean_rows, columns=COLUMNS)
+    df = pd.DataFrame(filtered_rows, columns=COLUMNS)
 
     df = df.map(clean_text)
 
+    # Source-verified award-status correction for competition 25-064.
+    # The 2025 source PDF records five awarded vendors with is_awarded = "No".
+    # Corrected to "Yes" based on source PDF verification.
     source_correction_mask = (
         (df["competition_number"] == "25-064")
         & (df["vendor_name"].isin(VENDORS_25064_YES))
@@ -135,7 +138,7 @@ def main():
     print("\nAwarded values:")
     print(df["is_awarded"].value_counts(dropna=False))
 
-    print("\nAmount validation:")
+    print("\nAmount field summary (extracted values, pre-cleaning):")
     print(f"Blank amounts: {amount_blank:,}")
     print(f"N/A amounts: {amount_na_upper:,}")
     print(f"NA amounts: {amount_na_plain:,}")

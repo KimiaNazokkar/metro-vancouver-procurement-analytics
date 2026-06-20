@@ -1,7 +1,7 @@
 """
 step1_extract_2026.py
 
-Extract Metro Vancouver 2026 awarded-bids data from the source PDF.
+Extract Metro Vancouver 2026 partial-year awarded-bids data from the source PDF.
 
 Purpose:
 - Read the 2026 Awarded Bids Register PDF using pdfplumber
@@ -68,7 +68,7 @@ def main():
             for table in tables:
                 rows.extend(table)
 
-    clean_rows = []
+    filtered_rows = []
 
     for row in rows:
         if not row:
@@ -80,21 +80,25 @@ def main():
         if str(row[0]).startswith("The following contracts"):
             continue
 
-        clean_rows.append(row)
+        filtered_rows.append(row)
 
-    df = pd.DataFrame(clean_rows, columns=COLUMNS)
+    df = pd.DataFrame(filtered_rows, columns=COLUMNS)
 
     df = df.map(clean_text)
 
     df = df.replace("", pd.NA)
     df = df.dropna(how="all")
 
+    # Source-verified award-status correction for competition 25-0001.
+    # The 2026 source PDF records DBA B&B Heavy Civil Construction Ltd. without
+    # a confirmed awarded status. Corrected to "Y" based on source PDF verification.
     source_correction_mask = (
         (df["competition_number"] == "25-0001")
         & (df["vendor_name"] == "DBA B&B Heavy Civil Construction Ltd.")
         & (df["awarded_amount"].notna())
     )
-    # Correction uses pre-normalized "Y" so it flows through the same Y/N → Yes/No mapping as source rows.
+    # Correction uses pre-normalized "Y" so it flows through the same
+    # Y/N → Yes/No mapping as source rows.
     df.loc[source_correction_mask, "is_awarded"] = "Y"
 
     df["is_awarded"] = df["is_awarded"].replace({
@@ -128,7 +132,7 @@ def main():
     ).sum()
 
     print("=" * 60)
-    print("STEP 1 EXTRACTION — 2026")
+    print("STEP 1 EXTRACTION — 2026 (partial year: January–March)")
     print("=" * 60)
     print(f"Rows extracted: {len(df):,}")
     print(f"Saved to: {OUTPUT_PATH}")
@@ -136,7 +140,7 @@ def main():
     print("\nAwarded values:")
     print(df["is_awarded"].value_counts(dropna=False))
 
-    print("\nAmount validation:")
+    print("\nAmount field summary (extracted values, pre-cleaning):")
     print(f"Blank amounts: {amount_blank:,}")
     print(f"N/A amounts: {amount_na_upper:,}")
     print(f"NA amounts: {amount_na_plain:,}")

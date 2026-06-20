@@ -3,7 +3,7 @@ step5h_suppress_source_duplicates.py
 
 PURPOSE
   Remove five confirmed duplicate award rows identified during pre-publication
-  source verification (June 2026). Produces a clean CSV for Tableau publication
+  source verification (June 2026). Produces the final governed analytical dataset for Tableau
   and a suppression audit log for reproducibility.
 
 PIPELINE POSITION
@@ -14,7 +14,9 @@ PIPELINE POSITION
 BACKGROUND
   25 competition numbers with multiple distinct descriptions were reviewed
   against the original Metro Vancouver Awarded Bids PDFs (2023-2026).
-  Five records were confirmed as duplicate rows inflating KPI baseline spend:
+  Five records were confirmed as source-level duplicates — the same award
+  published more than once in the Metro Vancouver source reports — that
+  overstate the KPI baseline spend when counted separately:
     - All 5 are source-level duplicates: the same award was published multiple
       times in the Metro Vancouver source reports through page-boundary
       repetition, same-page double entry, or case-variant vendor-name publication
@@ -38,8 +40,10 @@ VALIDATION
   Blocking assertions confirm:
     - Exactly 5 rows suppressed
     - Total overstatement removed equals $1,836,534
+    - Actual baseline reduction matches the suppression registry
     - Post-suppression KPI baseline equals $4,728,617,156
     - No financial_kpi_eligible rows outside the five targets are removed
+    - Output row count equals 2,133
 """
 
 import sys
@@ -70,6 +74,7 @@ EXPECTED_SUPPRESSED     = 5
 EXPECTED_OVERSTATEMENT  = 1_836_534.0
 EXPECTED_BASELINE_AFTER = 4_728_617_156.0
 BASELINE_TOLERANCE      = 1.0
+ASSERTION_COUNT         = 6
 
 
 # =============================================================================
@@ -328,9 +333,9 @@ def main():
     section("4 / 6   APPLY SUPPRESSION")
 
     eligible_before_count = int((df["financial_kpi_eligible"] == True).sum())
-    df_clean              = df.drop(index=drop_indices).reset_index(drop=True)
-    eligible_after_count  = int((df_clean["financial_kpi_eligible"] == True).sum())
-    rows_dropped          = len(df) - len(df_clean)
+    df_deduped             = df.drop(index=drop_indices).reset_index(drop=True)
+    eligible_after_count  = int((df_deduped["financial_kpi_eligible"] == True).sum())
+    rows_dropped          = len(df) - len(df_deduped)
     eligible_dropped      = eligible_before_count - eligible_after_count
 
     print(f"  Rows dropped                : {rows_dropped}")
@@ -344,7 +349,7 @@ def main():
     # ------------------------------------------------------------------
     section("5 / 6   BLOCKING ASSERTIONS")
 
-    baseline_after   = df_clean[df_clean["financial_kpi_eligible"] == True]["awarded_amount_numeric"].sum()
+    baseline_after   = df_deduped[df_deduped["financial_kpi_eligible"] == True]["awarded_amount_numeric"].sum()
     actual_reduction = baseline_before - baseline_after
 
     # A — rows suppressed
@@ -385,9 +390,9 @@ def main():
     ok(f"E  Eligible rows removed     = {eligible_dropped}  (exactly the {EXPECTED_SUPPRESSED} targeted, none unintended)")
 
     # F — output row count
-    if len(df_clean) != EXPECTED_ROWS_OUT:
-        fail(f"F  Output rows: expected {EXPECTED_ROWS_OUT:,}, got {len(df_clean):,}")
-    ok(f"F  Output row count          = {len(df_clean):,}  (expected {EXPECTED_ROWS_OUT:,})")
+    if len(df_deduped) != EXPECTED_ROWS_OUT:
+        fail(f"F  Output rows: expected {EXPECTED_ROWS_OUT:,}, got {len(df_deduped):,}")
+    ok(f"F  Output row count          = {len(df_deduped):,}  (expected {EXPECTED_ROWS_OUT:,})")
 
 
     # ------------------------------------------------------------------
@@ -395,7 +400,7 @@ def main():
     # ------------------------------------------------------------------
     section("6 / 6   WRITE OUTPUT")
 
-    df_clean.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
+    df_deduped.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
     ok(f"Output written: {OUTPUT_PATH.name}")
 
     print()
@@ -404,7 +409,7 @@ def main():
     print("  +---------------------------------------------------------+")
     print(f"  |  Input rows             {EXPECTED_ROWS_IN:>8,}                       |")
     print(f"  |  Rows suppressed        {rows_dropped:>8}                       |")
-    print(f"  |  Output rows            {len(df_clean):>8,}                       |")
+    print(f"  |  Output rows            {len(df_deduped):>8,}                       |")
     print("  +---------------------------------------------------------+")
     print(f"  |  Baseline before   ${baseline_before:>17,.0f}              |")
     print(f"  |  Overstatement removed -${actual_reduction:>14,.0f}              |")
@@ -417,7 +422,7 @@ def main():
         line = f"  |    {entry['competition_number']:<8} {entry['source_year']}  ${entry['overstatement']:>10,.0f}  {tag}"
         print(f"{line:<57}|")
     print("  +---------------------------------------------------------+")
-    print("  |  ALL 6 ASSERTIONS PASSED                               |")
+    print(f"  |  ALL {ASSERTION_COUNT} ASSERTIONS PASSED                               |")
     print("  +---------------------------------------------------------+")
 
     print()

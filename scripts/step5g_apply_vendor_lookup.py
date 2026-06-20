@@ -5,29 +5,29 @@ Apply the curated vendor lookup table to produce vendor_name_display.
 
 Purpose:
 - Rebuild vendor_name_key from raw vendor_name using the frozen key builder
-- LEFT JOIN the governed dataset to the curated lookup table on vendor_name_key
+- LEFT JOIN the whitespace-normalized source data to the curated lookup table on vendor_name_key
 - Assign vendor_name_display as the canonical display name for each vendor
 - Flag REVIEW rows for downstream awareness without suppressing them
-- Surface unmapped keys as visible audit signals rather than silent nulls
+- Surface unmapped keys as visible diagnostic signals rather than silent nulls
 - Parse awarded_date into a typed datetime field
-- Write the final vendor-normalized dataset with full audit columns preserved
+- Write the vendor-normalized dataset with full diagnostic columns preserved
 
 Architecture:
-  1. Load step5a governed dataset and curated lookup table
+  1. Load step5a whitespace-normalized source data and curated lookup table
   2. Rebuild vendor_name_key from raw vendor_name (frozen key builder)
   3. LEFT JOIN on vendor_name_key
   4. Assign vendor_name_display from lookup
   5. For REVIEW rows: apply display name but flag for downstream awareness
   6. For unmapped keys: surface as visible fallback, never silently fill
   7. Parse awarded_date into awarded_date_parsed
-  8. Write output with full audit columns preserved
+  8. Write output with full diagnostic columns preserved
 
 Column output:
   vendor_name             — original raw name, frozen and never modified
   vendor_name_key         — normalized key, used only for joining
   vendor_name_display     — curated display label for Tableau
   vendor_merge_confidence — AUTO_HIGH / REVIEW / SINGLE / PROMOTED / NO_MERGE
-  vendor_display_source   — how the display name was assigned (audit trail)
+  vendor_display_source   — how the display name was assigned (lineage column)
   awarded_date_parsed     — typed datetime from awarded_date string
   awarded_date_parse_failed — flag for dates that could not be parsed
 
@@ -44,7 +44,7 @@ Pipeline position:
 step5f assisted curation → THIS SCRIPT → step5h suppress source duplicates
 
 Inputs:
-  data/clean/step5a_vendor_safe_transforms.csv   (governed dataset)
+  data/clean/step5a_vendor_safe_transforms.csv   (whitespace-normalized source)
   data/clean/step5f_vendor_lookup_assisted.csv   (curated lookup table)
 
 Output:
@@ -110,7 +110,7 @@ def build_key(name: str) -> str:
 # ============================================================
 # DISPLAY SOURCE CLASSIFIER
 #
-# vendor_display_source audit values:
+# vendor_display_source lineage values:
 #   "lookup_high"     — confirmed merge, display from lookup
 #   "lookup_review"   — tentative merge, needs verification
 #   "lookup_single"   — no merge needed, display from lookup
@@ -190,7 +190,7 @@ def main():
     df = df.merge(lookup_clean, on="vendor_name_key", how="left")
 
     # --------------------------------------------------
-    # 5. Assign vendor_display_source for full audit trail
+    # 5. Assign vendor_display_source for full lineage tracking
     # --------------------------------------------------
     df["vendor_display_source"] = df.apply(assign_source, axis=1)
 
@@ -231,9 +231,9 @@ def main():
     )
 
     # --------------------------------------------------
-    # 7. AUDIT
+    # 7. DIAGNOSTIC SUMMARY
     # --------------------------------------------------
-    print("  VENDOR LOOKUP APPLICATION — AUDIT")
+    print("  VENDOR LOOKUP APPLICATION — DIAGNOSTIC SUMMARY")
     print("  " + "-" * 40)
     print()
 
@@ -286,7 +286,7 @@ def main():
     df.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
 
     print("=" * 60)
-    print("  VENDOR LOOKUP APPLICATION COMPLETE")
+    print("  STEP 5G VENDOR LOOKUP APPLICATION COMPLETE")
     print("=" * 60)
     print(f"  Total rows  : {len(df):,}")
     print(f"  Saved to    : {OUTPUT_PATH}")

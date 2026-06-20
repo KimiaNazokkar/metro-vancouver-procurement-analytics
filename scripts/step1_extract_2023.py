@@ -6,7 +6,7 @@ Extract Metro Vancouver 2023 awarded-bids data from the source PDF.
 Purpose:
 - Read the 2023 Awarded Bids Register PDF using pdfplumber
 - Extract tabular procurement award rows
-- Keep rows with valid competition numbers
+- Filter rows to those matching the standard competition number format (YY-NNN)
 - Normalize line breaks in competition descriptions
 - Save extracted rows to data/extracted/step1_extracted_2023.csv
 
@@ -48,7 +48,8 @@ def main():
                     continue
 
                 competition_number = str(row[0]).strip()
-
+                # Keep only rows matching the standard competition number format (YY-NNN).
+                # Non-matching rows are PDF header text, blank rows, or structural entries.
                 if re.fullmatch(r"\d{2}-\d{3}", competition_number):
                     rows.append(row)
 
@@ -91,7 +92,7 @@ def main():
         & (~df["awarded_amount"].isin(["N/A", "", None]))
     ).sum()
 
-    print("\nAmount validation:")
+    print("\nAmount field summary (extracted values, pre-cleaning):")
     print(f"Blank amounts: {amount_blank:,}")
     print(f"N/A amounts: {amount_na:,}")
     print(f"Yes + blank: {yes_blank:,}")

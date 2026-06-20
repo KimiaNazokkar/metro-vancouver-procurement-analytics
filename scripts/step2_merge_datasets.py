@@ -2,7 +2,7 @@
 step2_merge_datasets.py
 =======================
 Merge the four yearly extracted procurement award CSVs into a single
-Tableau-ready master dataset.
+combined dataset for downstream cleaning and normalization.
 
 Pipeline position: step1 (×4) → THIS SCRIPT → step3
 
@@ -15,7 +15,7 @@ What this script does
   5. Concatenates with pd.concat (no row filtering, no column changes)
   6. Validates post-merge math closure (blocking)
   7. Validates is_awarded domain values (blocking)
-  8. Produces a non-blocking duplicate inventory audit artifact
+  8. Produces a non-blocking duplicate inventory diagnostic
   9. Saves the merged output
 
 Blocking vs informational
@@ -23,7 +23,7 @@ Blocking vs informational
   BLOCKING    — the script raises an error and does NOT save output.
                 Use when data integrity cannot be trusted downstream.
 
-  INFORMATIONAL — the script prints a warning and continues.
+  INFORMATIONAL — the script prints an informational note and continues.
                   Use when the finding is known, documented, or downstream-safe.
 
 Current data quality notes
@@ -41,7 +41,7 @@ Current data quality notes
 Output
 ------
   data/clean/step2_merged_procurement_awards.csv
-  data/diagnostics/step2_duplicate_inventory.csv (audit artifact, non-blocking)
+  data/diagnostics/step2_duplicate_inventory.csv (diagnostic, non-blocking)
 """
 
 import pandas as pd
@@ -82,12 +82,12 @@ EXPECTED_COLUMNS = [
 # ============================================================
 # ROW COUNT BASELINES
 # These are the verified row counts from the completed extraction
-# audits for each year. They act as a checksum: if an extraction
+# diagnostics for each year. They act as a checksum: if an extraction
 # script is re-run and produces fewer rows (due to a regression),
 # or if a stale partial file is picked up, this assertion fires.
 #
 # To update these after re-running an extraction:
-#   Run the relevant diag_XXXX_raw_dump.py audit first,
+#   Run the relevant diag_XXXX_raw_dump.py diagnostic first,
 #   confirm the new count is correct, then update here.
 # ============================================================
 EXPECTED_ROW_COUNTS = {
@@ -97,7 +97,7 @@ EXPECTED_ROW_COUNTS = {
     "step1_extracted_2026.csv": 185,
 }
 
-EXPECTED_TOTAL_ROWS = sum(EXPECTED_ROW_COUNTS.values())  # 2138
+EXPECTED_TOTAL_ROWS = sum(EXPECTED_ROW_COUNTS.values())  # Pre-suppression Step 2 baseline
 
 
 # ============================================================
@@ -142,16 +142,6 @@ def fail(message: str):
     print("  Fix the issue above before re-running this step.")
     print("=" * 60)
     sys.exit(1)
-
-
-# ============================================================
-# HELPER: INFORMATIONAL WARNING
-# Prints a warning but does NOT stop the pipeline.
-# Use for known issues that are documented and downstream-safe.
-# ============================================================
-def warn(message: str):
-    """Print a warning and continue."""
-    print(f"  [WARN] {message}")
 
 
 # ============================================================
@@ -212,15 +202,15 @@ def main():
             )
 
         # ── Row count baseline check (BLOCKING) ───────────────────────────────────
-        # Verifies the file matches the row count confirmed by the extraction audit.
+        # Verifies the file matches the row count confirmed by the extraction diagnostic.
         # Catches: stale/partial file, extraction regression, wrong file loaded.
         expected_rows = EXPECTED_ROW_COUNTS[file_path.name]
         if len(df) != expected_rows:
             fail(
                 f"Row count mismatch in {file_path.name}:\n"
-                f"  Expected {expected_rows:,} rows (from extraction audit)\n"
+                f"  Expected {expected_rows:,} rows (from extraction diagnostic)\n"
                 f"  Got      {len(df):,} rows\n"
-                f"  Re-run the extraction audit before proceeding."
+                f"  Re-run the extraction diagnostic before proceeding."
             )
 
         # ── Add source_year BEFORE concatenation (data lineage) ───────────────────
@@ -263,8 +253,7 @@ def main():
             f"  Merged output rows: {actual_total:,}\n"
             f"  Delta: {actual_total - EXPECTED_TOTAL_ROWS:+,}"
         )
-    print(f"  ✓ Row count closure: {actual_total:,} rows  "
-          f"(516 + 527 + 910 + 185 = {EXPECTED_TOTAL_ROWS:,})")
+    print(f"  ✓ Row count closure: {actual_total:,} rows across all four source files")
 
 
     # ── is_awarded domain check (BLOCKING) ────────────────────────────────────────
@@ -323,7 +312,7 @@ def main():
 
 
     # ============================================================
-    # STEP 4: DUPLICATE INVENTORY AUDIT ARTIFACT (non-blocking)
+    # STEP 4: DUPLICATE INVENTORY (non-blocking diagnostic)
     #
     # What this is: a report of every (competition_number, vendor_name)
     # pair that appears more than once in the merged dataset.
@@ -353,10 +342,10 @@ def main():
     #     Action: none required. Different award events.
     #     Note: source_year column distinguishes these in Tableau.
     #
-    # This report is saved to data/diagnostics/ for auditor review.
+    # This report is saved to data/diagnostics/ for pipeline review.
     # It is NOT saved to data/clean/ — it is not part of the analysis dataset.
     # ============================================================
-    print("  DUPLICATE INVENTORY (non-blocking audit artifact)")
+    print("  DUPLICATE INVENTORY (non-blocking diagnostic)")
     print("  " + "-" * 40)
 
     # Count occurrences of each (competition_number, vendor_name, source_year) triple
@@ -405,8 +394,8 @@ def main():
         same_file_dupes["competition_number"] == SOURCE_VALID_25331_COMP
     ]
     if len(source_valid_25331_rows) > 0:
-        warn(
-            "Source-valid note: Competition 25-331 appears multiple times in the 2025 source file.\n"
+        print(
+            "  [INFO] Source-valid note: Competition 25-331 appears multiple times in the 2025 source file.\n"
             "         Source re-verification confirmed two distinct project scopes under the\n"
             "         same competition number. No merge-time correction is required."
         )
@@ -420,7 +409,7 @@ def main():
     master.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
 
     print("=" * 60)
-    print("  MERGE COMPLETE")
+    print("  STEP 2 MERGE COMPLETE")
     print("=" * 60)
     print(f"  Total rows  : {len(master):,}")
     print(f"  Saved to    : {OUTPUT_PATH}")

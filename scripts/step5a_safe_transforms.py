@@ -7,7 +7,7 @@ Purpose:
 - Strip leading and trailing whitespace from vendor names
 - Collapse internal runs of whitespace to a single space
 - Produce vendor_name_clean as a new column for downstream key building
-- Audit and report how many unique names changed
+- Diagnose and report how many unique names changed
 
 Note on Title Case: Title Case normalization was evaluated and excluded.
 Applying str.title() would corrupt all-caps legal entities (e.g., "GFL
@@ -55,11 +55,11 @@ def main():
     # --- Safe Transform 2: collapse internal double spaces ---
     df["vendor_name_clean"] = df["vendor_name_clean"].str.replace(r"\s+", " ", regex=True)
 
-    # --- Audit: how many unique names did we reduce? ---
+    # --- Diagnostic: how many unique names did we reduce? ---
     before = df["vendor_name"].nunique()
     after  = df["vendor_name_clean"].nunique()
 
-    print("  SAFE TRANSFORM AUDIT")
+    print("  SAFE TRANSFORM DIAGNOSTIC")
     print("  " + "-" * 40)
     print(f"  Unique names BEFORE  : {before:,}")
     print(f"  Unique names AFTER   : {after:,}")
@@ -67,7 +67,11 @@ def main():
     print()
 
     # --- Show what actually changed ---
-    changed = df[df["vendor_name"] != df["vendor_name_clean"]][["vendor_name", "vendor_name_clean"]].drop_duplicates()
+    changed = (
+        df[df["vendor_name"] != df["vendor_name_clean"]]
+        [["vendor_name", "vendor_name_clean"]]
+        .drop_duplicates()
+    )
     print(f"  Rows where name changed: {len(changed)}")
     print()
     if len(changed) > 0:
@@ -77,7 +81,7 @@ def main():
     df.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
 
     print("=" * 60)
-    print("  SAFE TRANSFORMS COMPLETE")
+    print("  STEP 5A SAFE TRANSFORMS COMPLETE")
     print("=" * 60)
     print(f"  Total rows  : {len(df):,}")
     print(f"  Saved to    : {OUTPUT_PATH}")
@@ -88,3 +92,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    

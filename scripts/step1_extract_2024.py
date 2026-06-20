@@ -76,7 +76,7 @@ def main():
             for table in tables:
                 rows.extend(table)
 
-    clean_rows = []
+    filtered_rows = []
 
     for row in rows:
         if not row:
@@ -88,9 +88,9 @@ def main():
         if str(row[0]).startswith("The following contracts"):
             continue
 
-        clean_rows.append(row)
+        filtered_rows.append(row)
 
-    df = pd.DataFrame(clean_rows, columns=COLUMNS)
+    df = pd.DataFrame(filtered_rows, columns=COLUMNS)
 
     df = df.map(
         lambda value: value.replace("\n", " ").strip()
@@ -123,8 +123,9 @@ def main():
 
     df.loc[mask_vendor_tail_in_amount, "awarded_amount"] = "NA"
 
-    # Manual source-verified corrections for rows where pdfplumber shifted
-    # wrapped description text into awarded_date/vendor_name.
+    # Manual source-verified corrections for pdfplumber column-shift parsing artifacts
+    # in the 2024 PDF layout. The source document values are correct; the PDF layout
+    # caused pdfplumber to misalign wrapped text into adjacent fields for these rows.
     df.loc[
         (df["competition_number"] == "24-085")
         & (df["is_awarded"] == "Yes"),
@@ -183,7 +184,7 @@ def main():
     print("\nAwarded values:")
     print(df["is_awarded"].value_counts(dropna=False))
 
-    print("\nAmount validation:")
+    print("\nAmount field summary (extracted values, pre-cleaning):")
     print(f"Blank amounts: {amount_blank:,}")
     print(f"N/A amounts: {amount_na_upper:,}")
     print(f"NA amounts: {amount_na_plain:,}")
@@ -193,7 +194,10 @@ def main():
     manual_correction_mask = df["competition_number"].isin(["24-085", "24-132"])
 
     print("\n2024-specific corrections:")
-    print("Vendor-tail column shift repairs applied to non-awarded rows")
+    print(
+        "Vendor-tail column shift repairs applied: "
+        f"{mask_vendor_tail_in_amount.sum():,} rows"
+    )
     print(
         "Source-verified manual corrections: "
         f"{manual_correction_mask.sum():,} rows "

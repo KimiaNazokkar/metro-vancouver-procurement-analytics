@@ -43,8 +43,8 @@ import pandas as pd
 from shared_utils import CLEAN_DIR
 
 
-# Frequency source: step5a contains the governed, whitespace-normalized
-# vendor names used throughout the rest of the pipeline.
+# Frequency source: step5a contains whitespace-normalized vendor names
+# used as the display name frequency reference throughout this step.
 SOURCE_DATA_PATH = CLEAN_DIR / "step5a_vendor_safe_transforms.csv"
 LOOKUP_SEED_PATH = CLEAN_DIR / "step5b_vendor_lookup_seed.csv"
 OUTPUT_PATH      = CLEAN_DIR / "step5f_vendor_lookup_assisted.csv"
@@ -301,12 +301,12 @@ def main():
     )
 
     # -------------------------------------------------------
-    # AUDIT REPORT
+    # DIAGNOSTIC SUMMARY
     # -------------------------------------------------------
     conf_counts = output["merge_confidence"].value_counts()
 
     print("─" * 60)
-    print("  ASSISTED CURATION — AUDIT REPORT")
+    print("  ASSISTED CURATION — DIAGNOSTIC SUMMARY")
     print("─" * 60)
     print()
     print("  Confidence distribution:")
@@ -355,12 +355,12 @@ def main():
     output.to_csv(OUTPUT_PATH, index=False, encoding="utf-8-sig")
 
     print("=" * 60)
-    print("  ASSISTED CURATION COMPLETE")
+    print("  STEP 5F ASSISTED CURATION COMPLETE")
     print("=" * 60)
     print(f"  Total groups : {len(output):,}")
     print(f"  Saved to     : {OUTPUT_PATH}")
     print()
-    print("  Curation checklist:")
+    print("  Manual curation checklist (complete before running step5g):")
     print("  1. Spot-check 5-10 AUTO_HIGH groups for false positives")
     print("  2. Work through REVIEW groups — most will resolve quickly")
     print("  3. Promote resolved REVIEW rows to AUTO_HIGH or PROMOTED")
