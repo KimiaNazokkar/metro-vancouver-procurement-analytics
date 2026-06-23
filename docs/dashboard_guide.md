@@ -86,9 +86,8 @@ Competition 23-346. The values shown are:
 - 2026: ~$0.1B (January–March only)
 
 The full KPI-eligible disclosed awarded spend figures — including both mega-projects —
-are $4.7B in total and are already captured in the header KPI strip. The trend chart
-is intentionally scoped to the normalized baseline so the annual pattern reflects
-operational procurement activity rather than capital program timing.
+are $4.7B in total and are already captured in the header KPI strip. 
+The annual spend chart is intentionally scoped to the normalized baseline so the year-level pattern reflects operational procurement activity rather than capital program timing.
 
 **Direct award rate by year.** A chart tracks the share of awarded competitions
 classified as direct-award instruments (DA, DA/NOIC, SS/NOIC, NOIC) per source year:
@@ -187,6 +186,7 @@ this baseline, not to the $4.7B total disclosed awarded spend.
 
 The supplier recurrence finding should be interpreted with care. Of 624 normalized
 awarded supplier entities, 521 (83.5%) appear in only one source reporting year.
+
 `source_year` reflects the publication year of the annual register, not the fiscal or calendar year of the award.
 A supplier appearing in only one source reporting
 year may have ongoing work that is not yet reflected in subsequent annual
@@ -211,25 +211,30 @@ publications, or may have work recorded in a different reporting period.
 ### Analytical Purpose
 
 Dashboard 3 examines how Metro Vancouver's disclosed procurement activity is structured
-across competition types, and how deeply the supplier market engaged with competitive
-procurements. It distinguishes between competitive instruments (RFP, ITT, RFQ, and
-related types) and direct-award instruments, and then focuses the depth analysis
-exclusively on competitive competitions.
+across procurement instrument types, and how many recorded participants engaged in
+competitions conducted through competitive instruments. It distinguishes competitive
+instruments — such as RFP, ITT, RFQ, ITQ, RFP-MA, and RFSQ — from direct-award
+instruments, and then focuses bidder-depth analysis only on competitions conducted
+through competitive instruments.
 
 ### Main KPIs and Visuals
 
 **Competition type mix.** A breakdown of 679 awarded competitions by
 `competition_type_standardized`. For readability, types are grouped into competitive
-instruments and direct-award instruments. The most common types are RFP (298
-competitions) and ITT (102 competitions) among competitive instruments, and SS/NOIC
-(101) and DA (82) among direct-award instruments.
+instruments, direct-award instruments, and cooperative/other instruments. The most
+common types are RFP (298 competitions) and ITT (102 competitions) among competitive
+instruments, and SS/NOIC (101) and DA (82) among direct-award instruments.
 
-**Single-bidder rate.** The overall rate across 494 competitive competitions is 21.9%
-(108 competitions received exactly one recorded vendor response). By source year:
-2023: 20.0% (29/145) · 2024: 28.0% (40/143) · 2025: 19.4% (36/186) · 2026: 11.5% (3/26).
+**Single-bidder rate.** The overall rate across 494 unique competitions conducted through
+competitive instruments is 21.9% (108 competitions received exactly one recorded vendor
+response). By source year: 2023: 20.0% (29/145) · 2024: 28.0% (40/143) · 2025:
+19.4% (36/186) · 2026: 11.5% (3/26). Year-level denominators are source-year
+appearances and sum to 500 because six competitions conducted through competitive
+instruments appear in more than one source year. The overall rate is calculated on 494
+unique competitions conducted through competitive instruments.
 
-**Bidder depth distribution.** A bar chart shows the number of competitive competitions
-by participant count bucket:
+**Recorded Participant Distribution.** A bar chart shows the number of unique competitions
+conducted through competitive instruments by participant count bucket:
 
 - 1 participant: 108 competitions
 - 2 participants: 105 competitions
@@ -238,30 +243,43 @@ by participant count bucket:
 - 6–10 participants: 55 competitions
 - 11+ participants: 24 competitions
 
+**Single-bidder rate by type.** Among competitive instrument types with at least 10
+observations, ITQ and ITT show the highest single-bidder rates at 33.3% and 28.2%,
+respectively. RFP records 18.8%, RFP-MA 17.6%, RFQ 16.7%, and RFSQ 0.0%. These
+values are descriptive register-based measures and should not be interpreted as
+instrument quality scores.
+
 **Direct award rate by year.** Reproduced from Dashboard 1 in this context to support
 the competition structure narrative: 2023: 15.7% · 2024: 25.5% · 2025: 30.6% ·
-2026: 51.9%.
+2026: 51.9%. The 2026 value reflects January–March only and should not be interpreted
+as a full-year trend signal.
 
 ### How to Interpret
 
-The single-bidder rate measures the share of competitive procurements — those using
-formal competitive instruments — where only one vendor response was recorded in the
-register. Direct-award competitions are excluded from this metric; applying the rate
-to the full competition portfolio would conflate two structurally different procurement
-approaches.
+The single-bidder rate measures the share of competitions conducted through competitive
+instruments where only one vendor response was recorded in the register. Direct-award
+instruments are excluded from this metric; applying the rate to the full procurement
+portfolio would conflate two structurally different procurement approaches.
 
-The 2024 single-bidder rate (28.0%) is the study period peak, meaning more than one
-in four competitive procurements in that year recorded a single vendor response. The
-2025 rate (19.4%) reflects a lower rate across a larger base of competitive
-competitions. The 2026 rate (11.5%) reflects only 26 competitive competitions across
-a partial year and is not a meaningful trend signal.
+The 2024 single-bidder rate (28.0%) is the study-period peak, meaning more than one
+in four competitive-instrument source-year appearances in that year recorded a single
+vendor response. The 2025 rate (19.4%) reflects a lower rate across a larger
+source-year base. The 2026 rate (11.5%) reflects only 26 source-year appearances for
+competitions conducted through competitive instruments across a partial year and is
+not a meaningful trend signal.
 
-The bidder depth distribution shows that shallow participation (1–3 responses)
-accounts for the majority of competitive competitions. Competitions attracting six or
-more recorded participants represent a smaller share of the competitive portfolio.
-"Participants" includes all vendors listed in the register for a competition — both
-awarded and not awarded. Participant counts may not capture every vendor that
-expressed interest or engaged informally before formal response.
+The bidder depth distribution shows that shallow recorded participation — one to three
+responses — accounts for the majority of unique competitions conducted through
+competitive instruments. Competitions attracting six or more recorded participants
+represent a smaller share of the competitive portfolio. "Participants" includes all
+vendors listed in the register for a competition — both awarded and not awarded.
+Participant counts may not capture every vendor that expressed interest or engaged
+informally before formal response.
+
+Single-bidder rates by instrument type are descriptive register-based measures. 
+They show where single-response outcomes appear more frequently in the disclosed records,
+but they do not explain why those outcomes occurred and should not be read 
+as comparative performance assessments of procurement methods.
 
 Direct awards are legitimate procurement instruments. Their share is shown by source
 reporting year for transparency, but the 2026 value reflects January–March only and
@@ -271,14 +289,17 @@ should not be interpreted as a full-year trend signal.
 
 - It does not interpret the single-bidder rate as a measure of procurement quality or
   competitive performance.
+- It does not rank procurement instrument types or assess one method as better or
+  worse than another.
 - It does not characterize direct awards as problematic or as a deviation from
   expected procurement practice.
 - It does not present 2026 competition structure rates as full-year trend signals.
 - Participant counts reflect the register, not total market engagement — vendors that
   engaged with a competition outside the formal response process are not visible in
   this data.
-- Year-level competition counts sum to 686 (not 679) due to multi-year appearances of
-  some competitions across source documents.
+- Year-level competition counts are source-year appearances and sum to 686, not
+  679 unique awarded competitions, because some competitions appear in more than one
+  source document.
 
 ---
 
@@ -289,8 +310,8 @@ should not be interpreted as a full-year trend signal.
 Dashboard 4 is the governance dashboard. It documents the analytical decisions,
 dataset definitions, known limitations, and data quality controls that support the
 other three dashboards. It is designed for reviewers who want to understand the
-rigor behind the numbers before relying on them — whether for professional evaluation,
-portfolio assessment, or further analysis.
+analytical controls behind the reported metrics before interpreting or reusing them —
+whether for professional evaluation, portfolio assessment, or further analysis.
 
 ### Main Content Areas
 
@@ -302,16 +323,17 @@ vendor performance.
 **KPI definitions.** Definitions for the primary metrics used across the dashboard
 suite, including:
 
-- *Disclosed Awarded Spend* — sum of KPI-eligible `awarded_amount_numeric` values;
-  not final contract expenditure
+- *Disclosed Awarded Spend* — sum of KPI-eligible disclosed awarded amounts captured
+  in `awarded_amount_numeric`; not final contract expenditure or a complete
+  expenditure record
 - *Awarded Competitions* — distinct competition numbers with at least one awarded
   vendor row; not a contract count
-- *Awarded Suppliers* — distinct `vendor_name_display` values with at least one
-  awarded row; normalized supplier entities, not verified unique companies
+- *Awarded Suppliers* — distinct normalized supplier display names with at least one
+  awarded row; analytical supplier entities, not verified corporate-family entities
 - *Normalized Spend Baseline* — KPI-eligible spend excluding competitions 21-457
   (NSWWTP, ~$1.95B) and 23-346 (Stanley Park Water Supply Tunnel, ~$318M)
-- *Single-Bidder Rate* — share of competitive competitions (excluding direct-award
-  types) with exactly one recorded participant row
+- *Single-Bidder Rate* — share of competitive competitions, excluding direct-award
+  types, with exactly one recorded participant row
 
 **Pipeline summary.** A description of the nine-stage ETL pipeline from PDF extraction
 through governed duplicate suppression. Governance signals documented here include
@@ -327,13 +349,14 @@ suppression audit log.
 - *KDQI-002 — Competition Number Format Variation: 22-167 / 22-0167* `Open` —
   Two competition numbers share description prefix and overlapping vendor pool;
   definitive relationship unconfirmed from source documents. Treated as distinct
-  events. No published KPI is affected. This is an open investigation item, not a
-  confirmed data quality defect.
+  events. No published KPI has been adjusted for this item because the relationship
+  remains unconfirmed. This is an open investigation item, not a confirmed data
+  quality defect.
 
 **Limitations summary.** Key limitations surfaced on the dashboard:
 
 - The disclosed register is not a complete expenditure record
-- Disclosed amounts are not final contract values
+- Disclosed amounts are not final contract expenditure
 - `source_year` is publication year, not fiscal year of award
 - 2026 covers January–March only
 - Vendor normalization involves judgment; REVIEW-confidence groups are tentative
@@ -348,17 +371,20 @@ follow references into the repository documentation (`docs/methodology.md`,
 `docs/data_dictionary.md`, `docs/kdqi_register.md`).
 
 The KDQI section is not a list of errors. KDQI-001 is closed and resolved. KDQI-002
-is an open investigation item that has been surfaced and quantified but does not affect
-any published KPI. Its presence on the dashboard reflects a deliberate governance
-decision to disclose uncertainty rather than suppress it.
+is an open investigation item that has been surfaced and documented. No published KPI
+has been adjusted for this item because the relationship remains unconfirmed. Its
+presence on the dashboard reflects a deliberate governance decision to disclose
+uncertainty rather than suppress it.
 
 ### What This Dashboard Does Not Claim
 
 - It does not represent the KDQI register as an audit finding against Metro Vancouver.
-- It does not claim the dataset is error-free — it claims that known issues are
-  documented, quantified, and either resolved or disclosed.
-- It does not assert that the pipeline covers all possible data quality risks, only
-  those identified during development and pre-publication source verification.
+- It does not claim the dataset is error-free — it states that known data quality
+  items identified in this workflow are documented, resolved where confirmed, and
+  disclosed where unresolved.
+- It does not assert that the pipeline covers all possible data quality risks; it
+  covers the issues identified during development and pre-publication source
+  verification.
 
 ---
 
