@@ -1,8 +1,9 @@
 # Metro Vancouver Procurement Analytics
-# Known Data Quality Issues Register (KDQI)
-# Version: 1.3
-# Last updated: 2026-06-17
-# Owner: Kimia Nazokkar
+## Known Data Quality Issues Register (KDQI)
+
+**Version:** 1.3
+**Last updated:** 2026-06-22
+**Owner:** Kimia Nazokkar
 
 This register is the authoritative record of all known data quality issues identified
 during pipeline development, source verification, and pre-publication QA. It is

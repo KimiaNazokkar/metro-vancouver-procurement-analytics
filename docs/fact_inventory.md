@@ -1,8 +1,9 @@
 # Metro Vancouver Procurement Analytics
-# Fact Inventory
-# Version: 1.0
-# Last updated: 2026-06-18
-# Owner: Kimia Nazokkar
+## Fact Inventory
+
+**Version:** 1.1
+**Last updated:** 2026-06-22
+**Owner:** Kimia Nazokkar
 
 This document is the controlled inventory of every published metric and narrative
 claim used across the project's public-facing materials: README, Tableau dashboards,
@@ -178,6 +179,24 @@ Facts are classified by verification status:
 **Wording constraint:** Always explain the exclusion on first reference. *"Normalized spend excludes two generational infrastructure projects — North Shore Wastewater Treatment Plant (NSWWTP), Competition 21-457 (~$1.95B), and Stanley Park Water Supply Tunnel, Competition 23-346 (~$318M) — whose scale would distort operational comparisons."* Do not use *"normalized spend"* alone without this context on first mention in any document.
 
 **Note:** The mega-project exclusion is an analytical scope decision, not a contract-size threshold. It reflects the specific capital programs involved, not a rule about contract value.
+
+---
+
+### F-09a — Normalized Spend Baseline by Source Year
+
+| Field | Value |
+|-------|-------|
+| Fact | KPI-eligible disclosed awarded spend excluding the two mega-projects, grouped by source reporting year |
+| Values | 2023: $544,432,043 · 2024: $793,052,007 · 2025: $1,064,411,860 · 2026: $54,883,949 |
+| Source dataset | `data/clean/step5h_deduped_procurement_awards.csv` |
+| Calculation basis | `SUM(awarded_amount_numeric) WHERE financial_kpi_eligible = True AND competition_number NOT IN ('21-457', '23-346') GROUP BY source_year` |
+| Status | VERIFIED |
+
+**Allowed uses:** Dashboard 1 annual spend trend, dashboard guide, README/dashboard QA reconciliation, and portfolio documentation where the normalized operational spend pattern is described.
+
+**Wording constraint:** Always describe this as normalized spend or normalized spend baseline by source reporting year. Always state that it excludes the two mega-projects: North Shore Wastewater Treatment Plant (NSWWTP), Competition 21-457, and Stanley Park Water Supply Tunnel, Competition 23-346. Do not use these figures as total KPI-eligible spend by year; use F-10 for full KPI-eligible spend by source year.
+
+**Note:** These four values sum to $2,456,779,859 when displayed as whole dollars, a $1 rounding difference from the F-09 normalized spend baseline of $2,456,779,860. The 2023 normalized and full-KPI values are identical because neither Competition 21-457 nor Competition 23-346 has KPI-eligible spend attributed to `source_year = 2023`. The 2026 value represents January–March only and must not be compared directly to full-year 2023–2025 values.
 
 ---
 

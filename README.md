@@ -14,19 +14,19 @@ The final governed dataset contains 2,133 vendor-competition records representin
 ## Key Findings
 
 ### 1. Metro Vancouver disclosed $4.7B in procurement activity across 679 awarded competitions
-Metro Vancouver's Awarded Bids Register discloses approximately $4.7B in procurement spending across 679 awarded competitions between 2023 and March 2026. This represents the full disclosed procurement footprint of a major regional public utility operating across water, wastewater, solid waste, and regional parks infrastructure. The governed analytical dataset contains 2,133 vendor-competition records representing 494 normalized suppliers, providing visibility into supplier participation, competition outcomes, and procurement activity across the organization.
+Metro Vancouver's Awarded Bids Register discloses approximately $4.7B in procurement spending across 679 awarded competitions between 2023 and March 2026. This represents the full disclosed procurement footprint of a major regional public utility operating across water, wastewater, solid waste, and regional parks infrastructure. The governed analytical dataset contains 2,133 vendor-competition records representing 679 awarded competitions and 624 normalized awarded supplier entities, providing visibility into supplier participation, competition outcomes, and procurement activity across the organization.
 
-### 2. Eleven vendors account for half of normalized procurement spending
-Across 494 active suppliers, the top 11 vendors collectively represent approximately 50% of normalized procurement spending. The largest supplier accounts for approximately 11.4% of normalized spend. Most leading vendors appear in only one reporting year, suggesting that concentration is driven primarily by individual large contract awards rather than persistent supplier dominance.
+### 2. Eleven normalized supplier entities account for half of the normalized spend baseline
+Across 624 normalized awarded supplier entities, the top 11 collectively represent approximately 50% of the normalized spend baseline. The largest supplier accounts for approximately 11.4% of the normalized spend baseline. 521 of 624 normalized awarded supplier entities appear in only one source reporting year.
 
 ### 3. Single-bidder participation peaked in 2024
-Across competitive procurement instruments, 21.9% of competitions received only one vendor response during the study period. The rate peaked at 28.2% in 2024 before declining to 17.5% in 2025, meaning that more than one in four competitive procurements received a single bid at the peak of the study period.
+Across competitive procurement instruments, 21.9% of competitions received only one vendor response during the study period. The rate peaked at 28.0% in 2024 before declining to 19.4% in 2025, meaning that more than one in four competitive procurements received a single vendor response at the peak of the study period.
 
-### 4. Direct awards increased from 15.7% to 51.9% of competitions
+### 4. Direct awards ranged from 15.7% to 30.6% of competitions across full reporting years
 Direct award competitions represented 15.7% of competitions in 2023 and 51.9% of competitions in the partial 2026 reporting period. Direct awards are a legitimate procurement instrument and may reflect sole-source requirements, emergency procurement, standing agreements, contract renewals, or other operational considerations.
 
-### 5. Deep bidder participation was the exception rather than the norm
-Among competitive procurements with recorded bidder counts, 100 competitions received a single bid, 110 received two bids, and 102 received three bids. Competitions attracting six or more bidders represented a minority of the competitive procurement portfolio, indicating that deep market participation was the exception rather than the norm — limiting competitive price discovery for a meaningful share of procurement activity across the study period.
+### 5. Deep vendor participation was the exception rather than the norm
+Among competitive procurements with recorded participant counts, 108 competitions received a single vendor response, 105 received two, and 102 received three. Competitions attracting six or more participants represented a minority of the competitive procurement portfolio, indicating that deep market participation was the exception rather than the norm across the study period.
 
 Taken together, these patterns describe a procurement portfolio where competitive market participation is narrower than headline competition counts alone suggest. Spending is concentrated among a relatively small supplier base, competitive instruments frequently attract limited vendor responses, and a meaningful share of disclosed activity is conducted through direct award or other procurement instruments outside the competitive bidding process — all of which are observable features of Metro Vancouver's disclosed procurement record, not assessments of the decisions that produced them. Direct awards are legitimate and commonly used procurement instruments; their use may reflect operational requirements, sole-source conditions, standing agreements, renewals, or other context that this analysis does not observe. What the data makes visible is the structure of market participation across 679 awarded competitions and $4.7B in disclosed procurement activity — a factual baseline for monitoring competitive depth, supplier dependence, and market engagement trends over time.
 
@@ -79,8 +79,7 @@ Combined annual extracts into a unified dataset with a common schema enforced ac
 Validated input row counts against extraction baselines and confirmed schema contract before concatenation.
 
 **Stage 3 — Data Cleaning**
-Standardized dates, monetary values, award indicators, and text fields.
-Classified each record's amount scope and applied seven blocking post-classification validations to confirm data integrity before output.
+Standardized monetary values and award indicators; classified each record's amount scope and applied seven blocking post-classification validations to confirm data integrity before output.
 
 **Stage 4 — Competition Type Normalization**
 Mapped raw procurement method values to a controlled competition type vocabulary.
@@ -101,6 +100,7 @@ Confidence levels and review reasons are recorded for every vendor group decisio
 **Stage 5G — Vendor Lookup Application**
 Applied curated vendor display names and entity resolution decisions via a governed LEFT JOIN on vendor key.
 Preserved both raw and normalized vendor representations for full audit traceability.
+Date parsing from `awarded_date` to `awarded_date_parsed` also occurs at this stage, with `awarded_date_parse_failed` flagged for diagnostic traceability.
 
 **Stage 5H — Source Duplicate Suppression**
 Removed five verified duplicate award records identified through source verification against the original Metro Vancouver procurement disclosures.
@@ -111,7 +111,7 @@ All suppressed rows are documented in a structured suppression registry and writ
 **Final Output**
 - 2,133 procurement records
 - 679 awarded competitions
-- 624 normalized suppliers
+- 624 normalized awarded supplier entities
 - Final governed analytical dataset, frozen prior to dashboard development and used as the source for all Tableau dashboards
 
 ---
@@ -146,13 +146,13 @@ The pipeline enforces data integrity through blocking assertions at each major t
 
 ### Known Data Quality Items
 
-Two items were identified and documented during pipeline development. Neither affects the validity of any published KPI. Full documentation is available in `docs/KDQI_register.md`.
+Two items were identified and documented during pipeline development. Neither affects the validity of any published KPI. Full documentation is available in `docs/kdqi_register.md`.
 
 **KDQI-001 — Source Duplicate Awards** `Closed`
 Five duplicate award records originating from source publication duplication were identified and removed through the governed suppression step (Stage 5H). Total baseline overstatement removed: $1,836,534. Audit log retained for reproducibility.
 
-**KDQI-002 — Competitions 22-167 / 22-0167: Competition Number Format Variant** `Open`
-Two source files record this competition in short format (`22-167`); a third uses a zero-padded format (`22-0167`) for the same Malaspina Phase I project. Available evidence suggests a single procurement vehicle, but this could not be confirmed with certainty. Treated as separate records pending further source confirmation. No KPI is affected.
+**KDQI-002 — Competition Number Format Variation: 22-167 / 22-0167** `Open`
+Competition `22-167` appears in the 2023 and 2024 source reports across multiple Metro Vancouver Housing Corporation projects. Competition `22-0167` appears in the 2026 source report for Malaspina Phase I Early Works. The two numbers share a description prefix and overlapping vendor pool, suggesting they may belong to the same procurement family or related construction management record. However, the distinct project descriptions, multi-year call-off structure, and unconfirmed zero-padding convention mean a definitive relationship has not been established from source documents. Both are treated as distinct competition events in the final dataset. This is an open investigation item, not a confirmed data quality defect, and no spend figures are restated pending resolution.
 
 ### Reproducibility
 

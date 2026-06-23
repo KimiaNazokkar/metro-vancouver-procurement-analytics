@@ -1,5 +1,5 @@
-# Data Dictionary
-## Metro Vancouver Procurement Analytics
+# Metro Vancouver Procurement Analytics
+## Data Dictionary
 
 **Dataset:** `data/clean/step5h_deduped_procurement_awards.csv`
 **Rows:** 2,133 vendor-competition records
