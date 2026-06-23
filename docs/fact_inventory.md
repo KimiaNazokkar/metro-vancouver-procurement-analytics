@@ -147,8 +147,7 @@ Facts are classified by verification status:
 
 ---
 
-### F-08 — Mega-project spend: 23-346 (Stanley Park Tunnel)
-
+### F-08 — Mega-project spend: 23-346 (Stanley Park Water Supply Tunnel)
 | Field | Value |
 |-------|-------|
 | Fact | KPI-eligible disclosed awarded spend for competition 23-346 |

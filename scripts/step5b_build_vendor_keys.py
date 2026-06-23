@@ -78,6 +78,14 @@ MANUAL_DISPLAY_OVERRIDES = {
             "raw source spelling retained."
         ),
     },
+    "halton recycling dba emterra environmental": {
+        "vendor_name_display": "Halton Recycling Ltd. dba Emterra Environmental",
+        "merge_confidence": "AUTO_HIGH",
+        "merge_notes": (
+            "Display casing standardized for public-facing label; "
+            "raw source capitalization retained."
+        ),
+    },
 }
 
 # ============================================================
