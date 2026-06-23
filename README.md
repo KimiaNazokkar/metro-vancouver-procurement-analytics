@@ -39,7 +39,7 @@ The analytical results are presented through a four-dashboard Tableau suite desi
 
 Provides a high-level view of Metro Vancouver's procurement portfolio, including total awarded spend, a normalized baseline that excludes two generational infrastructure projects to enable operational comparison, competition outcomes, supplier participation, and year-over-year spend trends.
 
-<img width="1200" alt="Executive Summary" src="dashboard-screenshots/Executive%20Summary.png" />
+<img width="1200" alt="Executive Summary" src="dashboard-screenshots/Executive_Summary.png" />
 
 ---
 
@@ -47,7 +47,7 @@ Provides a high-level view of Metro Vancouver's procurement portfolio, including
 
 Examines supplier concentration, vendor rankings, cumulative spend concentration, and supplier recurrence across reporting years. The concentration curve highlights the degree to which procurement spending is concentrated among a relatively small group of suppliers.
 
-<img width="1200" alt="Vendor Concentration and Supplier Dependence" src="dashboard-screenshots/Vendor%20Concentration%20%26%20Supplier%20Dependence.png" />
+<img width="1200" alt="Vendor Concentration and Supplier Dependence" src="dashboard-screenshots/Supplier_Concentration.png" />
 
 ---
 
@@ -55,7 +55,7 @@ Examines supplier concentration, vendor rankings, cumulative spend concentration
 
 Analyzes procurement instrument mix, direct award utilization, bidder participation, single-bidder rates, and bidder depth distributions. Tracks direct award utilization over time, bidder depth distributions, and single-bidder rates by year and competition type — including a 2024 peak in which more than one in four competitive procurements received a single vendor response.
 
-<img width="1200" alt="Competition Structure and Bid Depth" src="dashboard-screenshots/Competition%20Structure%20%26%20Bid%20Depth.png" />
+<img width="1200" alt="Competition Structure and Bid Depth" src="dashboard-screenshots/Structure_Bid_Depth.png" />
 
 ---
 
@@ -63,7 +63,7 @@ Analyzes procurement instrument mix, direct award utilization, bidder participat
 
 Documents analytical methodology, KPI definitions, data lineage, known data quality items, governance controls, limitations, and reproducibility considerations supporting the analysis.
 
-<img width="1200" alt="Methodology and Data Governance" src="dashboard-screenshots/Methodology%20%26%20Data%20Governance.png" />
+<img width="1200" alt="Methodology and Data Governance" src="dashboard-screenshots/Methodology_Data_Governance.png" />
 
 ---
 ## Data Pipeline
