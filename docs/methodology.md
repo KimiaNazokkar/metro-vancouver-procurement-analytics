@@ -1,8 +1,9 @@
 # Metro Vancouver Procurement Analytics
-# Analytical Methodology
-# Version: 1.1
-# Last updated: 2026-06-19
-# Owner: Kimia Nazokkar
+## Analytical Methodology
+
+**Version:** 1.1
+**Last updated:** 2026-06-23
+**Owner:** Kimia Nazokkar
 
 This document describes the analytical methodology, pipeline architecture, dataset
 design decisions, and known limitations for the Metro Vancouver Procurement Analytics
