@@ -171,14 +171,14 @@ Competition `22-167` appears in the 2023 and 2024 source reports with $233.1M in
 ## Repository Structure
 
 ```
-Metro-Vancouver-Procurement-Analytics/
+metro-vancouver-procurement-analytics/
 │
 ├── data/
 │   ├── raw/                                           # Source PDFs — not modified
-│   │   ├── awardedbids2023.pdf
-│   │   ├── awardedbids2024.pdf
-│   │   ├── awardedbids2025.pdf
-│   │   └── awardedbids2026.pdf
+│   │   ├── awarded-bids-2023.pdf
+│   │   ├── awarded-bids-2024.pdf
+│   │   ├── awarded-bids-2025.pdf
+│   │   └── awarded-bids-2026.pdf
 │   ├── extracted/                                     # Stage 1 outputs
 │   │   ├── step1_extracted_2023.csv
 │   │   ├── step1_extracted_2024.csv
@@ -194,8 +194,12 @@ Metro-Vancouver-Procurement-Analytics/
 │   │   ├── step4_normalized_procurement_awards.csv
 │   │   ├── step3_cleaned_procurement_awards.csv
 │   │   └── step2_merged_procurement_awards.csv
-│   └── diagnostics/                                   # Audit summary .txt files only
-│                                                      # (diagnostic CSVs excluded via .gitignore)
+│   └── diagnostics/                                   # Stage-level diagnostic outputs
+│       ├── 2023/
+│       ├── 2024/
+│       ├── 2025/
+│       ├── 2026/
+│       └── step2_duplicate_inventory.csv
 │
 ├── scripts/
 │   ├── step1_extract_2023.py                          # Stage 1 — 2023 PDF extraction
@@ -230,7 +234,10 @@ Metro-Vancouver-Procurement-Analytics/
 │   ├── Structure_Bid_Depth.png
 │   └── Methodology_Data_Governance.png
 │
-├── Metro_Vancouver_Procurement_Analytics.twbx         # Tableau workbook
+├── tableau/
+│   └── Metro_Vancouver_Procurement_Analytics.twbx     # Tableau workbook
+│
+├── .gitignore
 └── README.md
 ```
 
