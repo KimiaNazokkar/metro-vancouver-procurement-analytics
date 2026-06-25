@@ -281,9 +281,9 @@ Running all twelve scripts in stage order reproduces `data/clean/step5h_deduped_
 | Area | What this project demonstrates |
 |---|---|
 | **Python data engineering** | `pdfplumber` for structured PDF extraction with year-specific parsing logic; `pandas` for multi-stage ETL across a nine-stage governed pipeline |
-| **Pipeline governance** | Blocking assertion architecture at each transformation stage; schema contracts enforced at merge; math closure validation; suppression audit registry with six post-suppression assertions |
+| **Pipeline governance** | Blocking assertion architecture at each transformation stage; schema contracts enforced at merge; math closure validation; suppression audit log with six post-suppression assertions |
 | **Vendor entity resolution** | Deterministic six-step key normalization; rule-based confidence classification (AUTO\_HIGH, REVIEW, SINGLE, PROMOTED); governed lookup table of 1,197 vendor key groups; full raw-to-display audit trail |
-| **KPI architecture** | `amount_scope` classification to prevent double-counting shared group awards; `financial_kpi_eligible` flag design; normalized spend baseline as an analytical scope decision distinct from raw totals |
+| **KPI architecture** | `amount_scope` classification to prevent double-counting shared group awards; `financial_kpi_eligible` flag design; normalized spend baseline as an analytical scope decision distinct from gross KPI-eligible disclosed awarded spend |
 | **Tableau analytics** | Four-dashboard executive suite; LOD-style calculations for competition-grain metrics; controlled vocabulary filtering; governance dashboard documenting analytical controls |
 | **Data quality governance** | KDQI register with severity classification and resolution status; audit log design; structured disclosure of unresolved investigation items vs. confirmed defects |
 | **Analytical documentation** | Five governed reference documents: data dictionary (22 fields), methodology, dashboard reading guide, KDQI register, fact inventory with wording constraints for all published metrics |
